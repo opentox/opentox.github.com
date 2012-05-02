@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Calculating physico chemical descriptors with opentox algorithm"
-description: ""
-category: 
-tags: []
+description: "Opentox-ruby has facilities to calculate more than 300 non-proprietary physico-chemical descriptors, whose calculation can be easily triggered with REST calls."
+category: opentox-algorithm
+tags: [feature generation]
 ---
 {% include JB/setup %}
 
