@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Lazar Feature Generation, Feature Selection, Validation"
-description: "Services Tutorial: Lazar Feature Generation, Feature Selection, Validation"
+description: "This article illustrates feature generation, feature selection, and validation using opentox-ruby and the REST paradigm. As such, it may be useful as a high-level documentation."
 category: "opentox-algorithm"
 tags: [feature generation, feature selection, validation]
 ---
 {% include JB/setup %}
 
-**This article illustrates feature generation, feature selection, and validation using opentox-ruby and the REST paradigm. As such, it may be useful as a high-level documentation. **
+**This article illustrates feature generation, feature selection, and validation using opentox-ruby and the REST paradigm. As such, it may be useful as a high-level documentation.**
 
 REST (REpresentational State Transfer) is the programming paradigm that HTTP, the WWWs 'engine', is based upon. This lean technological basis has also been employed to run much more generalized, sophisticated, distributed, computational services such as [OpenTox](http://www.opentox.org). The set of OpenTox compliant services developed by [IST](http://www.in-silico.ch) in the Ruby programming language is called _opentox-ruby_.
 
