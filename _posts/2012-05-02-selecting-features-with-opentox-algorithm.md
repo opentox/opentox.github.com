@@ -2,8 +2,8 @@
 layout: post
 title: "Selecting Features with opentox algorithm"
 description: ""
-category: 
-tags: []
+category: opentox-algorithm
+tags: [feature generation]
 ---
 {% include JB/setup %}
 
