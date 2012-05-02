@@ -22,7 +22,8 @@ The IST Opentox Virtual Appliance (VA) was built using VirtualBox. It is recomme
 # 2) Starting the Appliance
 
 
-[**Download** the VA](http://www.maunz.de/opentox/Opentox IST Virtual Appliance.ova) (important: use a [download manager](https://secure.wikimedia.org/wikipedia/en/wiki/Download_manager), such as _DownThemAll_), then check the integrity of the archive by [calculating its MD5 sum](http://support.microsoft.com/kb/841290). It should equal 'ef360fed4524a956b701eecd74f4331e', otherwise your download has failed.
+[Download the VA](http://www.maunz.de/opentox/Opentox%20IST%20Virtual%20Appliance.ova). 
+**Important: use a [download manager](http://www.freedownloadmanager.org) to download such large files.**
 
 **Import** the file at "File", "Import Appliance...". Click through the rest of the process.
 
