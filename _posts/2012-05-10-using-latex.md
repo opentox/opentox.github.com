@@ -1,17 +1,132 @@
 ---
 layout: post
-title: "Using Latex"
-description: "Using Latex to typeset Scientific Articles"
+title: "Using Vim on Linux"
+description: "Using Vim on Linux"
 category: general
-tags: [latex]
+tags: [vim, latex]
 ---
 {% include JB/setup %}
 
-Using Latex to typeset Scientific Articles
-==========================================
+
+Installing vim
+==============
+
+    sudo apt-get install vim
+
+Add the following to your `~/.bashrc`:
+
+    export EDITOR=vim
+
+and do
+
+    source ~/.bashrc
+
+Now you can start the editor by entering `vim` at the command line.
+
+
+
+
+Basic setup
+===========
+
+Put this in your `~/.vimrc`:
+
+    " enable syntax highlighting
+    syntax on
+
+    " use spaces instead of tabs
+    set tabstop=2
+    set expandtab
+    set shiftwidth=2
+    set softtabstop=2 
+    
+    " always show ^M in DOS files
+    set fileformats=unix
+    
+    " my terminal is white on black
+    set background=dark
+    highlight Comment ctermbg=blue
+    highlight Comment ctermfg=white
+    
+    " always show line and col number and the current command, set title
+    set ruler
+    set showcmd
+    set title titlestring=vim\ %f
+
+    " caseinsensitive incremental search
+    set ignorecase
+    set incsearch
+    
+    " Show matching brackets
+    set showmatch
+    
+    " disable any autoindenting which could mess with your mouse pastes (and your head)
+    " (not useing 'set paste' here to keep fancy stuff like tab completion working)
+    set nocindent
+    set nosmartindent
+    set noautoindent
+    set indentexpr=
+    filetype indent on
+
+Your user experience should now be much better.
+
+
+
+
+Using vim
+=========
+
+Graphical Cheat Sheet
+---------------------
+
+
+![Vim Cheat Sheet](/images/vi-vim-cheat-sheet.gif)
+
+Learn vim with the [graphical cheat sheet](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html).
+
+
+
+Toggle auto-indenting for code paste
+------------------------------------
+
+In a console or terminal version of Vim, there is no standard procedure
+to paste text from another application. Instead, the terminal may
+emulate pasting by inserting text into the keyboard buffer, so Vim
+thinks the text has been typed by the user. After each line ending, Vim
+may move the cursor so the next line starts with the same indent as the
+last. However, that will change the indentation already in the pasted
+text.
+
+Put the following in your `~/.vimrc`:
+
+    nnoremap <F2> :set invpaste paste?
+    set pastetoggle=<F2>
+    set showmode 
+
+The first line sets a mapping so that pressing F2 in normal mode will
+invert the `'paste'`{.western} option, and will then show the value of
+that option. The second line allows you to press F2 when in insert mode,
+to toggle `'paste'`{.western}on and off. The third line enables
+displaying whether `'paste'`{.western} is turned on in insert mode.
+
+To paste from another application:
+
+-   Start insert mode.
+
+-   Press F2 (toggles the `paste` option on).
+
+-   Use your terminal to paste text from the clipboard.
+
+-   Press F2 (toggles the `paste` option off).
+
+Then the existing indentation of the pasted text will be retained.
+
+
+
+Using vim with Latex 
+====================
 
 LaTeX is a system for setting characters ('types'). Actually, it is a wrapper of macros around TeX, which has a famous [history](http://www.tug.org/whatis.html). LaTeX is most widely used In technical writing, especially mathematics, physics, and computer science, because it can typeset beautiful mathematical formulae.
-
 
 
 
@@ -31,7 +146,8 @@ Install vim, the Gnome version:
 
     sudo apt-get install \
       vim-gnome \
-      vim-latexsuite \
+      vim-latexsuite
+    vim-addons install latex-suite
 
 Now you can edit and compile TeX files.
 
@@ -57,11 +173,9 @@ Create file `~/.vim/ftplugin/tex.vim` and insert
 
 Add this to your `~/.vimrc`:
 
-    " Switch on syntax
-    syntax on
     " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
     filetype plugin on
-    "
+    
     " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
     " can be called correctly.
     set shellslash
@@ -71,8 +185,8 @@ Add this to your `~/.vimrc`:
     " program to always generate a file-name.
     set grepprg=grep\ -nH\ $*
     
+    " run latex
     map ,l :!latex %
-    :map \ld :execute '!xdvi -editor "vim --servername 'v:servername' --remote +\%l \%f" -sourceposition ' . line(".") . expand("%") . " '" . expand(Tex_GetMainFileName(':r')) . ".dvi' >/dev/null&" <CR><CR>
     
     " Spelling:
     autocmd FileType tex setlocal spell spelllang=en_us
@@ -82,13 +196,15 @@ Now you can edit and compile `.tex` files from within gvim. Load a [template doc
 
     gvim technical_report.tex
 
-In vim, press `\ll` to compile to dvi format and then `\ld` to view the document in xdvi. Change something and compile again, press `\ld` again or reload (`Ctrl+R`) the viewer.
+In vim, press `\ll` to compile to dvi format. Start xdvi (the dvi viewer) to view results. Change something, compile again and reload (`Ctrl+R`) the viewer.
 
 
 Gvim can interact with xdvi
 --------------------------
 
-If one clicks at some place in xdvi (usually Ctrl+Button1), vim automatically jumps to the corresponding line in the LaTeX source file ("reverse search"). Also, from inside Vim, one can jump to the corresponding line in xdvi which becomes highlighted ("forward search").
+Goal: If one clicks at some place in xdvi (usually Ctrl+Button1), vim automatically jumps to the corresponding line in the LaTeX source file ("reverse search"). Also, from inside Vim, one can jump to the corresponding line in xdvi which becomes highlighted ("forward search").
+
+Note: This shows only the process for Gvim, the graphical vim version. It works analogous for the terminal Vim.
 
 First of all, the latex document need to tell the latex compiler to set marks in the dvi file. Only put:
 
@@ -100,17 +216,21 @@ in the preamble of your latex document, or compile with:
 
 In your `.vimrc` file, add at the end:
 
-    :map \ld :execute '!xdvi -editor "vim --servername 'v:servername' --remote +\%l \%f" -sourceposition ' . line(".") . expand("%") . " '" . expand(Tex_GetMainFileName(':r')) . ".dvi' >/dev/null&" <CR><CR>
+    :map \ld :execute '!xdvi -editor "vim --servername 'v:servername' \
+    --remote +\%l \%f" -sourceposition ' . line(".") . expand("%") . \
+    " '" . expand(Tex_GetMainFileName(':r')) . ".dvi' >/dev/null&" <CR><CR>
 
-and in your `.bashrc`:
+Note: The above should be a single line. The `\` are not part of the command and are there to indicate that the command continues on the next line!
 
-    alias vim='gvim --servername vimtex'
+And in your `.bashrc`:
 
-The first allows the forward search by `\ld` in normal mode.
+    alias gvim='gvim --servername vimtex'
 
+
+Press `\ld` in Gvim in normal mode to start xdvi with forward search. 
 For things to work you must, in order:
 
-1. Open the tex file with gvim, 
-2. Open the dvi file with the command \\ld 
+1. Open the tex file with gvim (after `source`-ing your changed `~/.bashrc`), 
+2. Open the dvi file with the command `\ld`
 3. reverse-search using Ctrl + left-mouse-click.
 
