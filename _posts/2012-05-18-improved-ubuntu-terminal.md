@@ -39,38 +39,6 @@ The other chapters have no relevance for IST purposes.
 <p></p>
 
 
-# Installing **Ubuntu** on a System with Windows 7 (Dual-Boot)
-
-1.  Shrink Windows partition
-    1.  Start Windows.
-    2.  Prepare drive `C:` for shrinking (so that it can be made smaller than 50% of the disk capacity)
-
-        1.  [Set pagefile to
-            zero](https://www.evernote.com/shard/s89/sh/62db75f8-c3b0-4b64-85aa-0b6915fa1dfd/4917c857af11acb623d704c01a413a88).
-        2.  [Disable System
-            snapshots](https://www.evernote.com/shard/s89/sh/055a042c-63fb-40d6-9818-6eac6c49de3f/0ba25202bc986966d23be4b66561dad8).
-        3.  Reboot Windows and defrag drive `C:`.
-
-    3.  Shrink `C:` using the Windows 7 tools (Control Panel, type `partition` in the search box) to a minimal size.
-    4.  Revert pagefile and snapshots.
-2.  Install **Ubuntu** on the freed space and reboot to **Ubuntu**.
-3.  Tweak the system:
-
-    1.  **Important**: Use less battery power on laptops (still useful for desktops).
-
-        1.  [Check powersave potential on your
-            device](http://www.google.com/url?q=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1XsGWIb6mwvbji3O9ssSNX-wQzdUr90sajC1VSFsnf0w%2Fedit%3Fhl%3Den_US)
-            (german).
-        2.  [Install TLP](http://thinkpad-wiki.org/TLP_-_Stromspareinstellungen_fuer_Ubuntu).
-
-    2.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the
-        system with your desired user applications.
-
-<p></p>
----
-<p></p>
-
-
 # Terminal Sessions
 
 ## **Sudo** without password
@@ -97,7 +65,7 @@ Be careful and precise! If you mess up, there is no way to become root again and
 
 ## Keyboard Configuration
 
-As a programmer you want a US keyboard. Here is how to provide a US keyboard with german umlauts: insert the following in `~/.Xmodmap`, then check with `xmodmap ~/.Xmodmap` for errors (that's it, the configuration will be loaded automatically on login):
+As a programmer you want a US keyboard. Here is how to provide a US keyboard with german umlauts: insert the following in `~/.Xmodmap`, then check with `xmodmap ~/.Xmodmap` for errors (that's it, the configuration will be loaded automatically on login, if the check gives no errors):
 
     ! remove CapsLock, as nobody needs it
     remove Lock = Caps_Lock
