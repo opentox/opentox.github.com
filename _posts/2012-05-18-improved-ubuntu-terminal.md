@@ -239,11 +239,11 @@ If a file got accidentally deleted by **rm**, use **undel** to recover it.
 
 ### Color Support on the Console
 
-Your terminal supports colors. In particular, most GNU Core-Utils support colors. Some of the most important tools you use daily on a terminal are **Grep**, **Ls**, **Less**, and **Man**.
+Your terminal supports colors. In particular, most GNU Core-Utils support colors. Some of the most important tools you use daily on a terminal are **Grep**, **Ls**, **Less**, and **Man**. However, producing colors is dangerous: color codes are special characters, embedded in the output, which easily break shell scripts.
 
-Put this in your `.bash_aliases`:
+To be on the safe side ans still use colors, put this in your `.bash_aliases`:
 
-    # Colorize man pages
+    # Colorize man pages (safe)
     man() {
     	env \
     		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -256,18 +256,21 @@ Put this in your `.bash_aliases`:
     			man "$@"
     }
 
-    # Force ls to output colors, even if not connected to STDOUT
+    # Option to force output of colors, even if tool is not connected to STDOUT (DANGEROUS)
     export LS_OPTIONS="--color=always"
-    alias ls='ls $LS_OPTIONS'
+    
+    # Define a custom alias and use it to display files and directories, do NOT CHANGE ls command itself! 
+    alias l='ls $LS_OPTIONS'
 
-    # Force grep to use color codes
-    alias grep='grep $LS_OPTIONS'
+    # Define a custom alias and use it as a replacement for grep, do NOT CHANGE grep command itself!
+    alias cgrep='grep $LS_OPTIONS'
 
 Put this in your `.bashrc`:
 
-    # Have less interpret color codes from the input
+    # Have less interpret color codes from the input (safe)
     export LESS="-R"
-    # Have less colorize source code
+
+    # Have less colorize source code (safe)
     eval "$(lesspipe)"
 
 This will make **Less** highlight source code when there is a file `~/.lessfilter` that has the following contents and is executable:
