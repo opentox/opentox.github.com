@@ -7,31 +7,30 @@ tags: [Linux, Ubuntu, Terminal]
 ---
 {% include JB/setup %}
 
-Working in terminal windows is common on **Linux**, which is different from Windows or Mac OS, where most applications are graphically oriented. There are many tricks to improve user experience on Ubuntu terminal sessions, although recent versions are already quite well configured. A recent Ubuntu version is needed, and **bash** is assumed to be the shell. 
+Working in terminal windows is common on Linux, which is different from Windows or Mac OS, where most applications are graphically oriented. There are many tricks to improve user experience on Ubuntu terminal sessions, although recent versions are already quite well configured. A recent Ubuntu version is needed, and **bash** is assumed to be the shell. 
 
 <p></p>
 ---
 <p></p>
 
-# **Linux** Literature
+# Linux Literature
 
-Working on a terminal means working close to the "heart" of **Linux**. Also, the tools on the console are paradigmatic for the philosophy of **Linux**. Therefore, it pays to invest in understanding the latter. Here are some good, free readings.
+Working on a terminal means working close to the "heart" of Linux. Also, the tools on the console are paradigmatic for the philosophy of Linux. Therefore, it pays to invest in understanding the latter. Here are some good, free readings.
 
 - [Grundlagen für Informatiker (german)](http://openbook.galileocomputing.de/it_handbuch/)
 
-- [Komplette Einführung in **Linux** (german)](http://openbook.galileocomputing.de/linux/)
+- [Komplette Einführung in Linux (german)](http://openbook.galileocomputing.de/linux/)
 
 - [Introduction to the **GNU Core-Utils**](http://www.gnu.org/s/coreutils/manual/coreutils.pdf)
 
-It is worthwile to completely read all the above works. It is a lot of material, but foundational stuff, which reliefs 95+% of all practical (beginner) issues under **Linux**.
+It is worthwile to completely read all the above works. It is a lot of material, but foundational stuff, which reliefs 95+% of all practical (beginner) issues under Linux.
 
-For IST, all parts of the **Introduction to GNU Core-Utils** are highly relevant.
-For IST, the following chapters of **Komplette Einführung in Linux** are relevant:
+For terminal work, all parts of the **Introduction to GNU Core-Utils** are highly relevant, and the following chapters of **Komplette Einführung in Linux** are relevant:
 
 - Read quickly: 1,5
 - Read thoroughly: 6-11,21,26,30,31
 
-The other chapters have no relevance for IST purposes.
+The other chapters have virtually no relevance for our purposes.
 
 
 <p></p>
@@ -63,7 +62,7 @@ Be careful and precise! If you mess up, there is no way to become root again and
 <p></p>
 
 
-## Keyboard Configuration
+## Configuring US Keyboards to support German Umlauts
 
 As a programmer you want a US keyboard. Here is how to provide a US keyboard with german umlauts: insert the following in `~/.Xmodmap`, then check with `xmodmap ~/.Xmodmap` for errors (that's it, the configuration will be loaded automatically on login, if the check gives no errors):
 
@@ -84,7 +83,7 @@ Example: to get an ä press `CapsLock`-`a`, Ä with `CapsLock`-`Shift`-`A`.
 <p></p>
 
 
-## Using **Terminator**
+## Using **Terminator**, the Cool Terminal Emulator
 
 **Terminator** is a terminal emulator that can split screens and is in many ways an [improvement](http://software.jessies.org/terminator/) over the built-in gnome-terminal. 
 
@@ -227,7 +226,7 @@ as **cp** can also destroy data (by overwriting the target).
 
 ###Undelete
 
-If a file got accidentally deleted by `rm`, use `undel` to recover it.
+If a file got accidentally deleted by **rm**, use **undel** to recover it.
 
     sudo apt-get install e2undel
     man e2undel
@@ -284,7 +283,7 @@ A convenient package to improve user experience [is available](https://github.co
 This copies
 
 - **git** configuration: diff-wrapper that creates side-by-side diffs in **Vim**
-- **bash** configuration files: History without duplicates, colored prompt with dark background (better to read, less battery), syntax-highlighted **less** output, ...
+- **bash** configuration files: History without duplicates, colored prompt with dark background (better to read, less battery), syntax-highlighted **Less** output, ...
 - **vim** configuration file: Syntax highlighting, correct indentation (using spaces), unobtrusive color scheme with dark background (better to read, less battery), ruler, window title, ...
 - **irb** (ruby interactive) configuration file: Command completion, history.
 
