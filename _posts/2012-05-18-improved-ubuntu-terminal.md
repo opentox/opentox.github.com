@@ -258,13 +258,16 @@ Put this in your `.bash_aliases`:
 
     # Force ls to output colors, even if not connected to STDOUT
     export LS_OPTIONS="--color=always"
+    alias ls='ls $LS_OPTIONS'
 
-    # Force grep to interpret color codes
+    # Force grep to use color codes
     alias grep='grep $LS_OPTIONS'
 
 Put this in your `.bashrc`:
 
+    # Have less interpret color codes from the input
     export LESS="-R"
+    # Have less colorize source code
     eval "$(lesspipe)"
 
 This will make **Less** highlight source code when there is a file `~/.lessfilter` that has the following contents and is executable:
