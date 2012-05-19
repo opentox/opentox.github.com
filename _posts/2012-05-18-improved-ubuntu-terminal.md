@@ -256,14 +256,13 @@ To be on the safe side ans still use colors, put this in your `.bash_aliases`:
     			man "$@"
     }
 
-    # Option to force output of colors, even if tool is not connected to STDOUT (DANGEROUS)
-    export LS_OPTIONS="--color=always"
-    
-    # Define a custom alias and use it to display files and directories, do NOT CHANGE ls command itself! 
-    alias l='ls $LS_OPTIONS'
+    # Make ls use coloring, ...
+    alias ls='ls --color=auto' # when connected to STDOUT (safe)
+    alias lsc='ls --color=always' # always (dangerous, therefore custom cmd)
 
-    # Define a custom alias and use it as a replacement for grep, do NOT CHANGE grep command itself!
-    alias cgrep='grep $LS_OPTIONS'
+    # Make grep use coloring, ...
+    alias grep='grep --color=auto' # when connected to STDOUT (safe)
+    alias grepc='grep --color=auto' # always (dangerous, therefore custom cmd)
 
 Put this in your `.bashrc`:
 
