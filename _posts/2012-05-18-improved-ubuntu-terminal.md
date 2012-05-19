@@ -237,10 +237,13 @@ If a file got accidentally deleted by **rm**, use **undel** to recover it.
 <p></p>
 
 
-### Color support in **Man** and **Less**
+### Color Support on the Console
+
+Your terminal supports colors. In particular, most GNU Core-Utils support colors. Some of the most important tools you use daily on a terminal are **Grep**, **Ls**, **Less**, and **Man**.
 
 Put this in your `.bash_aliases`:
 
+    # Colorize man pages
     man() {
     	env \
     		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -253,7 +256,11 @@ Put this in your `.bash_aliases`:
     			man "$@"
     }
 
-This will make **Man** interpret color information.
+    # Force ls to output colors, even if not connected to STDOUT
+    export LS_OPTIONS="--color=always"
+
+    # Force grep to interpret color codes
+    alias grep='grep $LS_OPTIONS'
 
 Put this in your `.bashrc`:
 
@@ -282,9 +289,9 @@ A convenient package to improve user experience [is available](https://github.co
 
 This copies
 
-- **git** configuration: diff-wrapper that creates side-by-side diffs in **Vim**
-- **bash** configuration files: History without duplicates, colored prompt with dark background (better to read, less battery), syntax-highlighted **Less** output, ...
+- **bash** configuration files: History without duplicates, colored prompt with dark background (better to read, less battery), color support in GNU Core-Utils, syntax-highlighting in **Less**, ...
 - **vim** configuration file: Syntax highlighting, correct indentation (using spaces), unobtrusive color scheme with dark background (better to read, less battery), ruler, window title, ...
+- **git** configuration: diff-wrapper that creates side-by-side diffs in **Vim**
 - **irb** (ruby interactive) configuration file: Command completion, history.
 
 to your home directory (backups of existing files are created). Just log out and log in again to let the changes take effect.
