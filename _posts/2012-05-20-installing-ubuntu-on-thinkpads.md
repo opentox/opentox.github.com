@@ -29,8 +29,8 @@ Normally, Windows (Vista or better) can not be resized to less than half the har
 
     3.  Shrink `C:` using the Windows 7 tools (Control Panel, type `partition` in the search box) to a minimal size.
     4.  Revert pagefile and snapshots.
-2.  Decide what version of Ubuntu to use: 32bit or 64bit. Advice: always use the latter if you have more than 2G of RAM. Otherwise choose the 32bit version. **Always use the latest version** of Ubuntu!
-3.  Install **Ubuntu** on the freed space and reboot to Ubuntu.
+2.  Decide what edition of Ubuntu to use: 32bit or 64bit. Advice: always use the latter if you have more than 2G of RAM. Otherwise choose the 32bit edition. In any case **always use the latest version** of Ubuntu.
+3.  Install Ubuntu on the freed space and reboot to Ubuntu.
 
 # Miscalleneous Tweaks
 
@@ -46,7 +46,6 @@ Normally, Windows (Vista or better) can not be resized to less than half the har
 
 2.  For US keyboards (recommended): Run `sudo dpkg-reconfigure keyboard-configuration`, select 105 key generic / english-US layout with EUR sign on ‘5’ key. use AltGr as modifier for foreign symbols (default).
 
-3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the
-    system with your desired user applications.
+3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the system with your desired user applications. Read the [Ubuntu cheat sheet](http://www.cheat-sheets.org/#Ubuntu) to learn some basics about your system
 
 
