@@ -58,22 +58,14 @@ _Note_: Logging in graphically to the _VA_ starts server components automaticall
 * * *
 <br>
 
-# Hints:
-	
-* Do not rename the .ova file extracted from the archive.
-
-How to use the IST OpenTox Virtual Appliance in VirtualBox
-
 
 # Troubleshooting
 
-Do these steps in order, i.e. the latter only if the former do not resolve the problem.
+* Do not rename the .ova file extracted from the archive before importing.
 
-- _Restart:_ Click `(Re)Start.sh` to start the application in case of non-responding services. Wait until the script window has closed.<br>
-_Note_: Services are started automatically on startup. 
+- _Restart:_ Click `(Re)Start.sh` to start the application in case of non-responding services. Wait until the script window has closed. Note that respones can take some time, especially single predictions can take up to minutes, as descriptors need to be calculated, involving time consuming 3D calculations.<br>
 
-- _Shutdown:_ Click "System", "Shutdown" to terminate the machine. After shutdown, click "Run" again.<br>
-_Warning_: Do not power-off the machine without proper shutdown.
+- _Shutdown:_ Click "System", "Shutdown" to terminate the machine. After shutdown, click "Run" again. _Warning_: Do not power-off the machine without proper shutdown.
 
 
 
@@ -112,16 +104,13 @@ It is recommended to change passwords via
     passwd # change for user 'ist'
     sudo passwd # change for user 'root'
 
-Furthermore, it is recommended to stay user `ist` and dynamically aquire privileges via prefixing privileged commands with `sudo`.
+Furthermore, it is recommended to stay user `ist` and dynamically aquire privileges via prefixing privileged commands with `sudo`, i.e. not work as `root`.
 
-You can login directly in the appliance (in the windows opened when clicking "Run" when not in headless mode), or via SSH from the host machine (recommended). For the latter, enter in a terminal window on the host:
+You can login directly in the appliance (in the window that opens when clicking "Run"), or via SSH from the host machine (recommended). For the latter, enter in a terminal window on the host:
 
     ssh -p 2222 ist@localhost
 
-When your host machine is running Windows, use Putty (see section "Tips and Tricks" below). Of course, this will also work from other hosts on the same network as the host machine by exchanging `localhost` for the host machines name.
-
-
-_Hint:_ Use SCP in the appliance to copy data from the appliance to the host and vice versa.
+When your host machine is running Windows, use Putty as SSH client (see section "Tips and Tricks" below). Of course, this will also work from other hosts on the same network as the host machine by exchanging `localhost` for the host machines name.
 
 
 After login, start the server using
@@ -186,7 +175,7 @@ _Note:_ Switching to text mode removes the automated startup of the server compo
 
 ## Script for Windows users
 
-The script will open VirtualBox, set portforwarding, start VM Headless and connect to it via ssh (putty).
+The script will open VirtualBox, set portforwarding, start VM Headless and connect to it via ssh using Putty.
 _Note_: VirtualBox needs at least main user privileges.
 
 [Download _Putty_](http://portableapps.com/apps/internet/putty_portable), a Windows client for SSH.
