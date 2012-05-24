@@ -51,6 +51,8 @@ Click "Run" to run the Appliance. A window showing the Linux desktop will appear
 
 Start the Firefox Web Browser on the Linux desktop, which will load the graphical user interface of IST services.
 
+_Note_: Logging in graphically to the _VA_ starts server components automatically. Additionally, they are checked via cronjob in constant intervals in the background.
+
 
 <br>
 * * *
@@ -86,16 +88,9 @@ _Warning_: Do not power-off the machine without proper shutdown.
 For SSH connections to the appliance and HTTP server connections, you
 need to configure portforwarding.
 
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/HostPort" 2222
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/GuestPort" 22
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/Protocol" TCP
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/HostPort" 8000
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/GuestPort" 80
-    VBoxManage setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/Protocol" TCP
+By default, port `2222` and port `8080` on the host are forwarded to the _VA_ ports `22` (SSH) and `8080` (HTTP). This means machines on the local network (the network the host is in) can access the graphical user interface of IST services at `http://<hostname>:8080`.
 
-Now port `2222` and port `8000` on the host are forwarded to the _VA_ ports 22 (SSH) and 80 (HTTP). This means machines on the local network the host is in can access the graphical user interface of IST services at `http://host:8000`.
-
-*Note:* For a new portforwarding configuration, you have to restart the _VA_ one time for SSH and access to the graphical user interface of IST services to work.
+*Note:* To change portforwarding configuration, shut down the _VA_ and change settings under "Settings", "Network", "Port Forwarding".
 
 <br>
 * * *
@@ -165,6 +160,21 @@ Similarly, the following command shuts down the _VA_:
 
 If you are on Windows, omit the `&` at the end.
 
+If, additionally, you want to spare the overhead of running a GUI within the VA, edit file `/etc/default/grub`, and change line
+
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+to
+
+    GRUB_CMDLINE_LINUX_DEFAULT="text"
+
+then run
+
+    sudo update-grub
+
+which will switch the _VA_ to text mode.
+
+_Note:_ Switching to text mode removes the automated startup of the server components (triggered by loading the user interface). In this case, regular cronjob checks start the server components, but this can take up to five minutes.
 
 
 <br>
@@ -190,15 +200,6 @@ Create a file `start_opentox.bat` file and copy the following code:
     ECHO Please wait until VirtualBox window is opened.
     ping 0.0.0.0 -n 10 -w 10000 >NUL
     pause
-    ECHO Configuring Virtual Appliance (SSH and NGINX forwarding):
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/HostPort" 2222
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/GuestPort" 22
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/ssh/Protocol" TCP
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/HostPort" 8000
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/GuestPort" 80
-    "/path/to/VirtualBox/VBoxManage" setextradata "IST Opentox Virtual Appliance" "VBoxInternal/Devices/pcnet/0/LUN#0/Config/nginx/Protocol" TCP
-    ECHO Configuration finished.
-    pause
     START "" "c:/path/to/VirtualBox/VBoxHeadless" -startvm "IST Opentox Virtual Appliance"
     ECHO IST OpenTox VA is running headless... Please wait.
     ping 0.0.0.0 -n 20 -w 10000 > NUL
@@ -207,7 +208,7 @@ Create a file `start_opentox.bat` file and copy the following code:
     exit
 
 
-In the code above, replace all `c:/path/to/` with the real path to VirtualBox and Putty, respectively. Then save and close the file and run it.
+In the code above, replace all `c:/path/to/` with the real path to VirtualBox and Putty, respectively. If necessary, also adjust the _VA_ name after `-startvm`. Then save and close the file and run it.
 
 ## Guest Additions
 
