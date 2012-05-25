@@ -10,7 +10,7 @@ tags: [VirtualBox, Windows]
 
 **The IST Opentox Virtual Appliance is a tool that facilitates using IST's developments.**
 
-Bringing a native version of IST's server components to every relevant platform natively is not feasible. 
+Bringing a native version of IST's server components to every relevant computer platform is not feasible. 
 IST's efforts concentrate on Linux, which is versatile and suited for both, Desktops and servers. 
 For other platforms (such as Mac OS and Windows), consider using a virtual machine (VM). 
 Besides bringing the code to different platforms, VMs have features such as adjustable (virtual) hardware, snapshots ("frozen" states of the system that can be recovered), or easy backup (by exporting the VM to a file). Moreover, the contents of a VM can be easily extracted to real (physical) hardware. IST uses VirtualBox for VM deployment, but other systems (such as VMWare) are easily supported. This is, however, not covered here.
@@ -30,7 +30,7 @@ Besides bringing the code to different platforms, VMs have features such as adju
 
 # 2. Downloading the VA
 
-Download the _VA_ (you should have received a download link already). The _VA_ is distributed as a single, large, compressed file.
+Download the _VA_ (you should have received a download link). The _VA_ is distributed as a single, large, compressed file.
 Recommendation: use a [download manager](http://www.freedownloadmanager.org) to download such large files. Download managers can resume broken downloads at the point the download was interrupted.
 
   Extract the appliance. Download and install the [7zip](http://www.7-zip.org/download.html) program and unpack the downloaded file to a directory of your choice.
@@ -38,20 +38,25 @@ Recommendation: use a [download manager](http://www.freedownloadmanager.org) to 
 
 # 3. Running the VA
 
-Import the extracted file at "File", "Import Appliance...". Click through the rest of the process. This will take some time. Then, change the settings of the imported VA and assign it the highest [number of CPUs](http://www.virtualbox.org/manual/ch03.html#settings-processor) and [amount of RAM](http://www.virtualbox.org/manual/ch03.html#settings-motherboard) you can afford.
+Import the extracted file at "File", "Import Appliance...". Click through the rest of the process. When imported, change the settings of the _VA_ and assign it the highest [number of CPUs](http://www.virtualbox.org/manual/ch03.html#settings-processor) and [amount of RAM](http://www.virtualbox.org/manual/ch03.html#settings-motherboard) you can afford. Computationally expensive parts of IST's algorithms are designed for parallel processing, thus the _VA_ will profit from several CPU cores.
 
 [Take a snapshot](http://www.virtualbox.org/manual/ch01.html#idp14849456) of the initial state of the system, which allows you to easily revert to this state later on.
 
 Click "Run" to run the Appliance. A window showing the Linux desktop will appear.
 
-[![](http://www.maunz.de/wordpress/wp-content/uploads/2011/05/Desktop-300x209.png)](http://www.maunz.de/wordpress/wp-content/uploads/2011/05/Desktop.png)
-
 
 # 4. Using the VA
 
-Start the Firefox Web Browser on the Linux desktop, which will load the graphical user interface of IST services.
+There are two ways for accessing the graphical user interface:
 
-_Note_: Logging in graphically to the _VA_ starts server components automatically. Additionally, they are checked via cronjob in constant intervals in the background.
+- Start the web browser on the Linux desktop inside the _VA_ and point it to `http://istva:8080/toxcreate/predict` (this is the default when starting the web browser).
+- Start a web browser on (a computer on) the same network as the host the _VA_ is running on and point it to `http://hostname:8080/toxcreate/predict`, where `hostname` should be replaced by the name of the host the _VA_ is running on.
+
+      
+\[Screenshot\]
+
+_Note_: Server components are immediately started upon system startup. Additionally, constant interval checks for responsiveness ensure availability of services and (re-)start them appropriately.
+
 
 
 <br>
@@ -63,7 +68,7 @@ _Note_: Logging in graphically to the _VA_ starts server components automaticall
 
 * Do not rename the .ova file extracted from the archive before importing.
 
-- _Restart:_ Click `(Re)Start.sh` to start the application in case of non-responding services. Wait until the script window has closed. Note that respones can take some time, especially single predictions can take up to minutes, as descriptors need to be calculated, involving time consuming 3D calculations.<br>
+- _Restart:_ Use the link on the desktop to (re-)start the application in case of non-responding services. Wait until the script window has closed. Note that responses, especially single predictions, can take up to minutes, as descriptors need to be calculated, involving e.g. time-consuming 3D calculations of molecular structure.<br>
 
 - _Shutdown:_ Click "System", "Shutdown" to terminate the machine. After shutdown, click "Run" again. _Warning_: Do not power-off the machine without proper shutdown.
 
@@ -73,38 +78,22 @@ _Note_: Logging in graphically to the _VA_ starts server components automaticall
 * * *
 <br>
 
-**This section is more technical and gives advice on how to set up the _VA_, so that it can be reached from the outside, i.e. the local network that the host is in, and how to start it in "headless" mode.**
+**Techical section**
 
-# Portforwarding
+The procedures described below are intended for system administrators. Non-technical users can ignore the remainder of this page.
 
-For SSH connections to the appliance and HTTP server connections, you
-need to configure portforwarding.
+# Portforwarding and Logging in to the VA
 
-By default, port `2222` and port `8080` on the host are forwarded to the _VA_ ports `22` (SSH) and `8080` (HTTP). This means machines on the local network (the network the host is in) can access the graphical user interface of IST services at `http://<hostname>:8080`.
+By default, port `2222` and port `8080` on the host are forwarded to the _VA_ ports `22` (SSH) and `8080` (HTTP). To change portforwarding configuration, change settings under "Settings", "Network", "Port Forwarding" in the main VirtualBox GUI.
 
-*Note:* To change portforwarding configuration, shut down the _VA_ and change settings under "Settings", "Network", "Port Forwarding".
-
-<br>
-* * *
-<br>
-
-# Logging in to the VA
-
-_Caution_ Technical skills on Linux required.
-
-For login via SSH, and for running privileged commands, you need user credentials. Accounts activated by default on the _VA_ are:
+For SSH logins, and for running privileged commands, you need user credentials. Accounts activated by default on the _VA_ are:
 
 |User|Password|
 |:---|:-------|
 |ist |ist|
 |root|ist|
 
-It is recommended to change passwords via
-
-    passwd # change for user 'ist'
-    sudo passwd # change for user 'root'
-
-Furthermore, it is recommended to stay user `ist` and dynamically aquire privileges via prefixing privileged commands with `sudo`, i.e. not work as `root`.
+It is recommended to stay user `ist` and dynamically aquire privileges via prefixing privileged commands with `sudo`, i.e. not work as `root`.
 
 You can login directly in the appliance (in the window that opens when clicking "Run"), or via SSH from the host machine (recommended). For the latter, enter in a terminal window on the host:
 
@@ -133,6 +122,15 @@ logged in use
     sudo dpkg-reconfigure tzdata
 
 
+**Security Advice**: It is recommended to change passwords via
+
+    passwd # change for user 'ist'
+    sudo passwd # change for user 'root'
+
+and/or disable forwarding of port `2222` before using the machine productively.
+
+
+
 <br>
 * * *
 <br>
@@ -141,17 +139,15 @@ logged in use
 
 The following command (run from the host system's command line) starts the _VA_ invisibly, in the background.
 
-    VBoxHeadless -startvm "IST Opentox Virtual Appliance" &
+    VBoxHeadless -startvm "Name Of VM" &
 
 Similarly, the following command shuts down the _VA_:
 
-    VBoxManage controlvm "IST Opentox Virtual Appliance" acpipowerbutton &
+    VBoxManage controlvm "Name of VM" acpipowerbutton &
 
-If you are on Windows, omit the `&` at the end.
+If you are on Windows, omit the `&` at the end. Adjust the VM name (the name is displayed in the main VirtualBox GUI)
 
-If, additionally, you want to spare the overhead of running a GUI within the VA, edit file `/etc/default/grub`, and change line
-
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+If, additionally, you want to spare the overhead of running a GUI within the VA, edit file `/etc/default/grub`, and change line that starts with `GRUB_CMDLINE_LINUX_DEFAULT`
 
 to
 
@@ -161,9 +157,9 @@ then run
 
     sudo update-grub
 
-which will switch the _VA_ to text mode.
+which will switch the _VA_ to text mode after restart.
 
-_Note:_ Switching to text mode removes the automated startup of the server components (triggered by loading the user interface). In this case, regular cronjob checks start the server components, but this can take up to five minutes.
+_Note:_ Switching to text mode removes the immediate startup of server components (triggered by loading the graphical user interface). When in text mode, server components start with a delay of up to five minutes.
 
 
 <br>
@@ -189,7 +185,7 @@ Create a file `start_opentox.bat` file and copy the following code:
     ECHO Please wait until VirtualBox window is opened.
     ping 0.0.0.0 -n 10 -w 10000 >NUL
     pause
-    START "" "c:/path/to/VirtualBox/VBoxHeadless" -startvm "IST Opentox Virtual Appliance"
+    START "" "c:/path/to/VirtualBox/VBoxHeadless" -startvm "Name of VM"
     ECHO IST OpenTox VA is running headless... Please wait.
     ping 0.0.0.0 -n 20 -w 10000 > NUL
     ECHO Please use putty window to login.
@@ -197,7 +193,7 @@ Create a file `start_opentox.bat` file and copy the following code:
     exit
 
 
-In the code above, replace all `c:/path/to/` with the real path to VirtualBox and Putty, respectively. If necessary, also adjust the _VA_ name after `-startvm`. Then save and close the file and run it.
+In the code above, replace all `c:/path/to/` with the real path to VirtualBox and Putty, respectively, and adjust the VM name after `-startvm` (the name is displayed in the main VirtualBox GUI). Then save and close the file and run it.
 
 ## Guest Additions
 
@@ -207,7 +203,7 @@ will improve user experience with
 * automated mouse support (mouse not "trapped" in the _VA_ window anymore)
 * text copying (can copy text from and to the _VA_ window)
 
-_Note_: Guest additions are perhaps already installed on your VA.
+_Note_: Guest additions are probably already installed on your _VA_.
 
 
 
