@@ -25,7 +25,7 @@ Besides bringing the code to different platforms, VMs have features such as adju
 
 # 1. Installing Virtualbox
 
-[Install VirtualBox](http://www.virtualbox.org/wiki/Downloads). The IST Opentox Virtual Appliance (referred to as _VA_) was built using VirtualBox. It is recommended to also use it to run the _VA_.
+[Install VirtualBox](http://www.virtualbox.org/wiki/Downloads). The IST Opentox Virtual Appliance (referred to as _VA_) was built using VirtualBox (version 4.1.16). It is recommended to also use it to run the _VA_.
 
 
 # 2. Downloading the VA
