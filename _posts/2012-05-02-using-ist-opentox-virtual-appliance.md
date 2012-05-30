@@ -52,8 +52,7 @@ There are two ways for accessing the graphical user interface:
 - Start the web browser on the Linux desktop inside the _VA_ and point it to `http://istva:8080/toxcreate/predict` (this is the default when starting the web browser).
 - Start a web browser on (a computer on) the same network as the host the _VA_ is running on and point it to `http://hostname:8080/toxcreate/predict`, where `hostname` should be replaced by the name of the host the _VA_ is running on.
 
-      
-\[Screenshot\]
+![IST GUI](/images/IST_Nestle_GUI.png)      
 
 _Note_: Server components are immediately started upon system startup. Additionally, constant interval checks for responsiveness ensure availability of services and (re-)start them appropriately.
 
