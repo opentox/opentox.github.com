@@ -29,3 +29,7 @@ After the downgrade, do not forget to [pin](https://help.ubuntu.com/community/Pi
     echo libgsl0ldbl hold | dpkg --set-selections
 
 Recommendation: Do nothing more about it. If possible, use Ubuntu 11.10 (oneiric) or Debian 6.0 (squeeze), which both have version 1.14 of libgsl.
+
+# Could not get fminer working with ruby-enterprise-1.8.7-2012.02
+
+On one system (Ubuntu 10.04.3 LTS) we could compile the fminer libraries and ruby bindings, but using fminer via ruby produced segmentation faults. Moving back to ruby-enterprise-1.8.7-2011.03 (configure in config.sh) solved the issue.
