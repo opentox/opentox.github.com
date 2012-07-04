@@ -113,24 +113,24 @@ Practical Aspects
 
 _Initialization:_
 
-    1. Let _x = n. _
-    2. Let _y = x_. Let _x = x/2_. Let __min_frequency_ = _x.__
-    3. Run BBRC/LAST-PM, passing _min_frequency_ as parameter.
+    1. Let x = n
+    2. Let y = x. Let x = x/2. Let min_frequency = x
+    3. Run BBRC/LAST-PM, passing min_frequency as parameter.
     4. Go to 2. until pattern set size "large enough" (determined by you).
 
 _Main phase:_
 	
-    1. Run BBRC/LAST-PM, passing _min_frequency_ as parameter.
+    1. Run BBRC/LAST-PM, passing min_frequency as parameter.
     2. Pattern set size "large enough" (determined by you)?
       1. No:
-        Let _y = min_frequency_.
-        Let _min_frequency = (x+min_frequency)/2_.
+        Let y = min_frequency.
+        Let min_frequency = (x+min_frequency)/2.
         Go to 1.
       2. Yes: Running time "low enough" (determined by you)?
         1. No:
-          Let _x = min_frequency_.
-          Let _min_frequency = (min_frequency+y)/2.
-          Go to 1. _
+          Let x = min_frequency.
+          Let min_frequency = (min_frequency+y)/2.
+          Go to 1.
         2. Yes: You are done, i.e. min_frequency has now a suitable value.
 	
  For [YAML](http://en.wikipedia.org/wiki/YAML) as an easier alternative to RDF output, try requesting the result with
