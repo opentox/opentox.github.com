@@ -83,7 +83,7 @@ if something went wrong and you have to reset a tag.
     git push origin :refs/tags/$RELEASE # remove the remote tag
     git tag $RELEASE # recreate the tag
     git push --tags  # push tag to remote
-    
+<br />
 ###Helper to complete the ChangeLog
 suppose you want to know what was done in the development branch since the last release date (e.G.: 2012/03/13). This git command give you each commits in a line. Add --no-merges to remove merge commits.      
 
