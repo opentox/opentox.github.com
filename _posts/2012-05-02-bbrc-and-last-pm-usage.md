@@ -15,7 +15,7 @@ REST is the technical basis for all OpenTox compliant services. BBRC and LAST-PM
 # Calling the REST interface
 
 
-The development server at [http://ot-test.in-silico.ch](http://ot-test.in-silico.ch) is used, which always provides the latest version. The individual calls return task URIs- it is not shown how to extract the result URIs from them (just do curl -H "accept:yaml" for human readable format on the task URIs).
+The development server at [http://ot-test.in-silico.ch](http://ot-test.in-silico.ch) is used, which always provides the latest version. The individual calls return task URIs- it is not shown how to extract the result URIs from them (just do `curl -H "accept:yaml"` for human readable format on the task URIs).
 
 
 
@@ -71,10 +71,10 @@ Call Nr. 3 above (which does the actual mining) accepts more arguments. Here are
 * BBRC
 
 
-  * To do ordinary, i.e. frequent and class-correlated (no BBRC), subtree mining, use _-d "backbone=false"_ on the BBRC service.
+  * To do ordinary, i.e. frequent and class-correlated (no BBRC), subtree mining, use `-d backbone=false` on the BBRC service.
 
 
-  * Provide _-d "min_chisq_significance=x"_ to set the minimum correlation threshold (default=0.95) on the BBRC service.
+  * Provide `-d min_chisq_significance=x` to set the minimum correlation threshold (default=0.95) on the BBRC service.
 
 
 
@@ -85,13 +85,13 @@ Call Nr. 3 above (which does the actual mining) accepts more arguments. Here are
 * BBRC and LAST-PM
 
 
-  * To get the support of patterns instead of their mere presence, use _-d "nr_hits=true"_ on the BBRC or LAST-PM service (see [this post](http://www.maunz.de/wordpress/opentox/2011/support-calculation-in-bbrc-and-last-pm)).
+  * To get the support of patterns instead of their mere presence, use `-d nr_hits=true` on the BBRC or LAST-PM service (see [this post](http://www.maunz.de/wordpress/opentox/2011/support-calculation-in-bbrc-and-last-pm)).
 
 
-  * To adjust minimum frequency on the BBRC or LAST-PM service, pass _-d "min_frequency=5"_ for a minimum frequency of 5, for example. Note that minimum frequencies are always interpreted as absolute numbers.
+  * To adjust minimum frequency on the BBRC or LAST-PM service, pass `-d min_frequency=5` for a minimum frequency of 5, for example. Note that minimum frequencies are always interpreted as absolute numbers.
 
 
-  * Disable tree-shaped fragments (resorting to linear fragments) on the BBRC or LAST-PM service by setting _-d "feature_type=paths"_.
+  * Disable tree-shaped fragments (resorting to linear fragments) on the BBRC or LAST-PM service by setting `-d feature_type=paths`.
 
 
 
@@ -106,7 +106,7 @@ Practical Aspects
 
 
 	
-* Modify min\_frequency in order to find sensible values for  minimum frequency. It is the parameter that primarily affects running time and output set size. However, finding parameter values for graph mining automatically is an open research question. Therefore, here is a heuristic procedure to find a "good" value for a dataset of _n_ instances (always round to whole numbers, where applicable):
+* Modify `min_frequency` in order to find sensible values for  minimum frequency. It is the parameter that primarily affects running time and output set size. However, finding parameter values for graph mining automatically is an open research question. Therefore, here is a heuristic procedure to find a "good" value for a dataset of _n_ instances (always round to whole numbers, where applicable):
 
 
 
@@ -133,8 +133,7 @@ _Main phase:_
           Go to 1.
         2. Yes: You are done, i.e. min_frequency has now a suitable value.
 	
- For [YAML](http://en.wikipedia.org/wiki/YAML) as an easier alternative to RDF output, try requesting the result with
-H "accept:yaml"_ as curl parameter.
+ For [YAML](http://en.wikipedia.org/wiki/YAML) as an easier alternative to RDF output, try requesting the result with `-H "accept:yaml"` as curl parameter.
 
 
 * Review the [list of use cases](http://www.maunz.de/wordpress/opentox/2011/use-case-table-for-fminer) supported by BBRC and LAST-PM.
@@ -148,9 +147,9 @@ H "accept:yaml"_ as curl parameter.
 # Some Background Information
 
 
-Graph mining applications fminer/bbrc (BBRC) and fminer/last (LAST-PM) are **complete miners** in the sense that they do not restrict the result set of subgraphs _a-priori_ to a specific amount of patterns. Restricting the output set would contradict the principle of data-driven pattern generation, where no human intervention should be applied to the data mining process.
+Graph mining applications fminer/bbrc (BBRC) and fminer/last (LAST-PM) are **complete miners** in the sense that they do not restrict the result set of subgraphs a-priori to a specific amount of patterns. Restricting the output set would contradict the principle of data-driven pattern generation, where no human intervention should be applied to the data mining process.
 
-Instead of hard cutoffs for the set size, the user is expected to bound the mining process with sensible constraints (this is where he is "allowed" to bring expert knowledge in). In the worst case however, he has to apply a _trial-and-error_ strategy for finding such constraints.
+Instead of hard cutoffs for the set size, the user is expected to bound the mining process with sensible constraints (this is where he is "allowed" to bring expert knowledge in). In the worst case however, he has to apply a trial-and-error strategy for finding such constraints.
 
 **BBRC** has been designed for (binary) class-correlated subgraph mining. In this domain, where each compound (graph) is assigned a true/false value, it can handle very large datasets. The algorithm is optimized for this setting and here the parameters have sensible default values.
 
@@ -160,7 +159,7 @@ Instead of hard cutoffs for the set size, the user is expected to bound the mini
 ## The Regression Case
 
 
-When dealing with numerical values as target variable ([referred to as _prediction-feature_](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage)), some pruning techniques (_dynamic upper bound pruning_), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
+When dealing with numerical values as target variable ([referred to as *prediction-feature*](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage)), some pruning techniques (*dynamic upper bound pruning*), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
 
 Regression has not been experimentally validated yet and support is therefore experimental. Meanwhile, here are some hints that alleviate possible problems in this setting. They refer to each other, but try them also individually!
 
