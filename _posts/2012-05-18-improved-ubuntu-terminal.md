@@ -92,7 +92,8 @@ Example: to get an ä press `CapsLock`-`a`, Ä with `CapsLock`-`Shift`-`A`.
 Install **Terminator**:
     
 1.  `sudo apt-get install terminator`
-2.  Set up a [keyboard shortcut](https://www.evernote.com/shard/s89/sh/3295a820-7922-494a-876a-dfb95acb5477/7d02933ca42fa97f4d79191912dfb355) for starting **Terminator**. I use my blue “ThinkVantage” button for this (Lenovo ThinkPad).
+2.  Set up a keyboard shortcut for starting **Terminator**. I use my blue “ThinkVantage” button for this (Lenovo ThinkPad). Run `sudo aptitude install compizconfig-settings-manager`, followed by `ccsm`. Go to the 'Commands' page. Enter `terminator` for 'Command line 0' and add a keybinding. Hit the 'Enable Commands' checkbox and close the window.
+
 3.  Configure **Terminator** by running the preferences editor via `python /usr/share/terminator/terminatorlib/prefseditor.py` and configure as follows (only differences to default values shown):
 
     1.  Global
