@@ -48,7 +48,7 @@ will show you the file in `less`. Use output redirection, such as `git show HEAD
 ## Downgrade or delete a remote branch
 
 Suppose your local HEAD on branch `<branch>` is rubbish, you have coded something and committed it already. Assume you want to get rid of the last `n` commits.
-First, make sure you are on branch `branch`, then remove them locally:
+First, make sure you are on branch `<branch>`, then remove them locally:
 
     git reset --hard HEAD~n
 
