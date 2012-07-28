@@ -3,7 +3,7 @@ layout: post
 title: "Improved Ubuntu Terminal"
 description: "Some techniques to improve user experience on Ubuntu terminal sessions"
 category: General
-tags: [Linux, Ubuntu, Terminal]
+tags: [Linux, Ubuntu, Debian, Terminal]
 ---
 {% include JB/setup %}
 
