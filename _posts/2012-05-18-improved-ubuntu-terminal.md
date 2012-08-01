@@ -3,7 +3,7 @@ layout: post
 title: "Improved Ubuntu Terminal"
 description: "Some techniques to improve user experience on Ubuntu terminal sessions"
 category: General
-tags: [Linux, Ubuntu, Terminal]
+tags: [Linux, Ubuntu, Debian, Terminal]
 ---
 {% include JB/setup %}
 
@@ -93,6 +93,7 @@ Install **Terminator**:
     
 1.  `sudo apt-get install terminator`
 2.  Set up a keyboard shortcut for starting **Terminator**. I use my blue “ThinkVantage” button for this (Lenovo ThinkPad). Run `sudo aptitude install compizconfig-settings-manager`, followed by `ccsm`. Go to the 'Commands' page. Enter `terminator` for 'Command line 0' and add a keybinding. Hit the 'Enable Commands' checkbox and close the window.
+3.  As in the previous step, start `ccsm`, go to the Ubuntu unity plugin, and remove the keybindings for unity, which start the dash when you hit the Windows or Alt key.
 
 3.  Configure **Terminator** by running the preferences editor via `python /usr/share/terminator/terminatorlib/prefseditor.py` and configure as follows (only differences to default values shown):
 

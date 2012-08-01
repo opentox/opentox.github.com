@@ -3,7 +3,7 @@ layout: post
 title: "Installing Ubuntu on Thinkpads"
 description: ""
 category: General
-tags: [Linux, Thinkpad]
+tags: [Linux, Ubuntu, Debian, Thinkpad]
 ---
 {% include JB/setup %}
 
