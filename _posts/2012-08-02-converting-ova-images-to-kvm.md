@@ -13,7 +13,7 @@ This is a short example how to convert OVA for the use in a proxmox 2.0 KVM envi
 
 ## Extract the OVA Archive
 OVA files are TAR archives with the OVF directory inside. <br />
-In this case the OVA-file was created with Virtualbox. To extract the archive do 
+To extract the archive do 
  
     tar -xvf Virtual_Appliance_Debian.ova
     => 
