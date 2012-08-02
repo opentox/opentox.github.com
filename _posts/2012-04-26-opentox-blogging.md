@@ -38,3 +38,9 @@ Publish
     git add .
     git commit -m "Add new content"
     git push 
+
+<br />
+Formatting
+-------
+* [Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)
+* [github flavoured markdown](http://github.github.com/github-flavored-markdown/)
