@@ -31,10 +31,12 @@ This installation script will prepare your system for the opentox services, incl
     for f in opentox-client opentox-server opentox-test algorithm dataset feature task; do git clone "git@github.com:opentox/$f.git"; cd $f; git checkout development; git checkout migration; cd ..; done 
     # install services with script (bundle)
     cd $OT_PREFIX/opentox-client/bin 
-    ./opentox-client-install
+    ./opentox-client-install 
+    # this script might fail after installing ruby, please start script again. Will be fixed soon.
     cd $OT_PREFIX/opentox-server/bin
     ./opentox-server-install
-    for f in algorithm dataset feature task; do cd $f/bin; ./$f-install; cd ../..; done
+    cd $OT_PREFIX
+    for f in algorithm dataset feature task opentox-test; do cd $f/bin; ./$f-install; cd ../..; done
     if ! cat $HOME/.opentox/config/default.rb | grep "compound">/dev/null 2>&1; then echo '$compound = { :uri => "http://webservices.in-silico.ch/compound" }' >> $HOME/.opentox/config/default.rb; fi    
     
 # Add ot-tools to your .bashrc
@@ -44,3 +46,15 @@ This installation script will prepare your system for the opentox services, incl
 # Run services
 
     otstart all 
+
+# Access web services
+
+The default port setting (see default config file ~/.opentox/conf/default.rb):
+Algorithm: localhost:8081/algorithm
+Compound: localhost:8082/compound
+Dataset: localhost:8083/dataset
+Feature: localhost:8084/feature
+Model: localhost:8085/model
+Task: localhost:8086/task
+Validation: localhost:8087/validation
+4store: localhost:8088/status
