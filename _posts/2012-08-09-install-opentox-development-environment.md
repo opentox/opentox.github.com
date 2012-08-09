@@ -11,7 +11,7 @@ HowTo install recent opentox services on Ubuntu or Debian
 
 # Installation:
 
-Installation (`development` at the point of writing this = 09/09/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at github. Please follow instruction:
+Installation (`development` at the point of writing this = 09/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at github. Please follow instruction (an internet connection is required):
 
     sudo apt-get install git-core 
     # please add you ssh keys at github. You may add your name/email adress to the local git config.
@@ -42,19 +42,34 @@ This installation script will prepare your system for the opentox services, incl
 # Add ot-tools to your .bashrc
 
     echo '. ~/install/ot-tools-user.sh' >> ~/.bashrc
+    # source .bashrc or restart shell
 
 # Run services
 
     otstart all 
 
+# Kill services 
+    
+    otkill all
+
 # Access web services
 
 The default port setting (see default config file ~/.opentox/conf/default.rb):
-Algorithm: localhost:8081/algorithm
-Compound: localhost:8082/compound
-Dataset: localhost:8083/dataset
-Feature: localhost:8084/feature
-Model: localhost:8085/model
-Task: localhost:8086/task
-Validation: localhost:8087/validation
-4store: localhost:8088/status
+
+    Algorithm: localhost:8081/algorithm
+    Compound: localhost:8082/compound
+    Dataset: localhost:8083/dataset
+    Feature: localhost:8084/feature
+    Model: localhost:8085/model
+    Task: localhost:8086/task
+    Validation: localhost:8087/validation
+    4store: localhost:8088/status
+
+# Testing services
+
+    cp $HOME/.opentox/config/default.rb $HOME/.opentox/config/test.rb  # This is a workaroung, will be fixed soon.
+    cd $OT_PREFIX/opentox-test
+    otconfig
+    ruby opentox-client.rb
+
+
