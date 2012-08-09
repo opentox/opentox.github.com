@@ -35,6 +35,7 @@ This installation script will prepare your system for the opentox services, incl
     cd $OT_PREFIX/opentox-server/bin
     ./opentox-server-install
     for f in algorithm dataset feature task; do cd $f/bin; ./$f-install; cd ../..; done
+    if ! cat $HOME/.opentox/config/default.rb | grep "compound">/dev/null 2>&1; then echo '$compound = { :uri => "http://webservices.in-silico.ch/compound" }' >> $HOME/.opentox/config/default.rb; fi    
     
 # Add ot-tools to your .bashrc
 
