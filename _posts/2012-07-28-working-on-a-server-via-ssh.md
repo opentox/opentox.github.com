@@ -51,6 +51,18 @@ See [this tutorial](http://goo.gl/7SH1I) to learn how to work with vimdiff.
 <p></p>
 
 
+Using htop
+==========
+
+`htop` is an ncurses-based tool for monitoring CPU, RAM, load, and processes. 
+See this [tutorial](http://goo.gl/bJlXD).
+
+
+<p></p>
+---
+<p></p>
+
+
 Using GNU screen
 ================
 
@@ -81,19 +93,19 @@ You can have several so-called windows inside a screen session, which you can im
 - `Ctrl+a c`  Create new window
 - `Ctrl+a k`  Kill the current window / session
 - `Ctrl+a w`  List all windows
-- `Ctrl+a 0-9`  Go to a window numbered 0 9, use Ctrl+a w to see number
+- `Ctrl+a 0-9`  Go to a window numbered 0 9, use `Ctrl+a w` to see number
 - `Ctrl+a Ctrl+a` Toggle / switch between the current and previous window
-- `Ctrl+a :fit` Fit screen size to new terminal size. You can also hit Ctrl+a F for the the same task
+- `Ctrl+a :fit` Fit screen size to new terminal size. You can also hit `Ctrl+a F` for the the same task
 - `Ctrl+a D` Power detach and logout. *Think twice before doing this!*
 - `Ctrl+a d`  Detach but keep shell window open. *This is safe!*
 - `Ctrl-a ?`  Display help screen i.e. display a list of commands
 
 You can also have so-called regions that split your screen window, so you can monitor different things at the same time.
 
-- `Ctrl+a S`  Split terminal horizontally into regions and press Ctrl+a c to create new window there
+- `Ctrl+a S`  Split terminal horizontally into regions and press `Ctrl+a` c to create new window there
 - `Ctrl+a :resize`  Resize region
 - `Ctrl+a tab`  Move to next region
-- `Ctrl+a :remove`  Remove / delete region. You can also hit Ctrl+a X for the same taks
+- `Ctrl+a :remove`  Remove / delete region. You can also hit `Ctrl+a X` for the same taks
 
 Scrolling
 
@@ -115,4 +127,5 @@ You should be back to your session named "screentitle".
 ![home-bin](/images/screen1.png)
 
 Try it: open a screen session on a remote machine, then pull the network cable.
+
 
