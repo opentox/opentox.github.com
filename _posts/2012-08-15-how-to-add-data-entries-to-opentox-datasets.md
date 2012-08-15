@@ -39,4 +39,4 @@ Example:
     # save
     dataset.save
 
-You can find more examples in https://github.com/opentox/opentox-test/blob/fbc246e92d4dbfa3d108e6c3fa9b613e9aff9945/test/dataset.rb.
+You can find more examples in [opentox-test/test/dataset.rb](https://github.com/opentox/opentox-test/blob/fbc246e92d4dbfa3d108e6c3fa9b613e9aff9945/test/dataset.rb)
