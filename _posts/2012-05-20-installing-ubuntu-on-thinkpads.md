@@ -2,7 +2,7 @@
 layout: post
 title: "Installing Ubuntu on Thinkpads"
 description: ""
-category: General
+category: linux
 tags: [Linux, Ubuntu, Debian, Thinkpad]
 ---
 {% include JB/setup %}
@@ -13,9 +13,13 @@ tags: [Linux, Ubuntu, Debian, Thinkpad]
 
 Lenovo Thinkpads are well-suited for Linux. Although they work out-of-the-box, there are still many options that can be tuned.
 
+# Do not remove Windows
+
+If it is already removed, re-install it first. Then install system software from [Lenovo support](http://support.lenovo.com/de_DE/) or [IBM support](http://www-947.ibm.com/support/entry/portal/overview) (older Thinkpads), especially all firmware updates. Keep Windows installed, otherwise no firmware updates are possible or very difficult.
+
 # Installing **Ubuntu** on a System with Windows (Dual-Boot)
 
-Normally, Windows (Vista or better) can not be resized to less than half the hard disk size. Here is how to do it:
+Normally, Windows (Vista or later) is not intended to cover less than half the hard disk space. Here is how to do it:
 
 1.  Shrink Windows partition
     1.  Start Windows.
@@ -32,20 +36,22 @@ Normally, Windows (Vista or better) can not be resized to less than half the har
 2.  Decide what edition of Ubuntu to use: 32bit or 64bit. Advice: always use the latter if you have more than 2G of RAM. Otherwise choose the 32bit edition. In any case **always use the latest version** of Ubuntu.
 3.  Install Ubuntu on the freed space and reboot to Ubuntu.
 
+For XP and earlier versions of Windows, use [gparted live CD](https://www.google.de/search?sourceid=chrome&ie=UTF-8&q=gparted+live+cd) to resize partitions.
+
 # Miscalleneous Tweaks
 
-1.  **Use less battery power** (also useful for desktops, e.g. for silent cooling). My Thinkpad now is in the deep sleep state (C7) about 97% of the time, and runs longer with Ubuntu than with Windows.
+1.  Use less battery power(also useful for desktops, e.g. for silent cooling). My Thinkpad now is in the deep sleep state (C7) about 97% of the time, and runs longer with Ubuntu than with Windows.
 
     1.  Check powersave potential on your device.
 
         1. Install **Powertop** (`sudo apt-get install powertop`).
-        2. Run `sudo powertop`. Let powertop gather data for a while. Check sections **Device Stats** and **Tunables**. The former show you what hardware is using most power, the latter what you can do to tune your software.
+        2. Run `sudo powertop`. Let powertop gather data for a while. Check sections *Device Stats* and *Tunables*. The former show you what hardware is using most power, the latter what you can do to tune your software.
 
     2.  [Install **TLP** (german)](http://thinkpad-wiki.org/TLP_-_Stromspareinstellungen_fuer_Ubuntu).
-    3. With **TLP** installed, run **Powertop** again and compare. Google for any remaining recommendations under **Tunables**.
+    3. With **TLP** installed, run **Powertop** again and compare. Google for any remaining recommendations under *Tunables*.
 
-2.  For US keyboards (recommended): Run `sudo dpkg-reconfigure keyboard-configuration`, select 105 key generic / english-US layout with EUR sign on ‘5’ key. use AltGr as modifier for foreign symbols (default).
+2.  For US keyboards (recommended for programming): Run `sudo dpkg-reconfigure keyboard-configuration`, select *105 key generic / english-US layout with EUR sign on ‘5’ key*. use `AltGr` as modifier for foreign symbols (default).
 
-3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the system with your desired user applications. Read the [Ubuntu cheat sheet](http://www.cheat-sheets.org/#Ubuntu) to learn some basics about your system
+3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the system with your desired user applications. Read the [Ubuntu cheat sheet](http://www.cheat-sheets.org/#Ubuntu) to learn some basics about your system. Consider [tweaking Ubuntu console](/General/2012/05/18/improved-ubuntu-terminal).
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Parameter Selection with BBRC and LAST PM"
 description: "This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage) on how to apply the hints in your situation."
-category: opentox-algorithm
+category: algorithm
 tags: [fminer, feature generation, BBRC, LAST-PM]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Data Mining and Machine Learning Algorithms in Lazar"
 description: "Several statistical learners exist within Lazar. This page details important computational components."
-category: opentox-algorithm
+category: algorithm
 tags: [Lazar]
 ---
 {% include JB/setup %}

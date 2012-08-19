@@ -2,7 +2,7 @@
 layout: post
 title: "Blogging at opentox.github.com"
 description: ""
-category: General
+category: meta
 tags: []
 ---
 {% include JB/setup %}

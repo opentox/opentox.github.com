@@ -2,7 +2,7 @@
 layout: post
 title: "Error handling"
 description: ""
-category: general
+category: development
 tags: [development]
 ---
 {% include JB/setup %}

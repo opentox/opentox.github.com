@@ -2,7 +2,7 @@
 layout: post
 title: "Release Development with Git Flow"
 description: "Release Development with Git Flow"
-category: Git
+category: development
 tags: [git, deployment]
 ---
 {% include JB/setup %}

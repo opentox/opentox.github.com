@@ -2,7 +2,7 @@
 layout: post
 title: "Installer issues"
 description: ""
-category: General
+category: setup
 tags: [deployment, Debugging, Ubuntu, Debian, Setup]
 ---
 {% include JB/setup %}
