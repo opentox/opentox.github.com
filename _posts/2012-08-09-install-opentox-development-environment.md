@@ -49,17 +49,14 @@ This installation script will prepare your system for the use of `opentox` web s
       cd $OT_PREFIX/$f/bin
       ./$f-install
     done
-    if ! cat $HOME/.opentox/config/default.rb | grep "compound">/dev/null 2>&1; then i
-      echo '$compound = { :uri => "http://webservices.in-silico.ch/compound" }' >> $HOME/.opentox/config/default.rb
-    fi 
 
-Now, `opentox` web services are downloaded, installed and configured.   
+Now, `opentox` web services have been downloaded, installed and configured.   
     
 # Activate and use ot-tools
 
 Add ot-tools to your .bashrc:
 
-    echo '. ~/.opentox/ot-tools.sh' >> ~/.bashrc
+    echo '. $HOME/.opentox/ot-tools.sh' >> ~/.bashrc
     # source .bashrc or restart shell
 
 All ot-tools (`otconfig`, `otstart`, `otcheck`, `otreload`, `otkill`) are available in your shell. General usage: 
@@ -80,30 +77,37 @@ It is possible to manage single services (e.g. `otstart dataset` to run dataset 
 
 # Access web services
 
-The default port setting (see default config file ~/.opentox/config/default.rb):
+The default port setting for the web services and their 4store backends,  (see config files ~/.opentox/config/\*.rb):
 
     Algorithm: localhost:8081/algorithm
+    Algorithm 4store backend: localhost:9081
     Compound: localhost:8082/compound
+    Compound 4store backend: localhost:9082
     Dataset: localhost:8083/dataset
+    Dataset 4store backend: localhost:9083
     Feature: localhost:8084/feature
+    Feature 4store backend: localhost:9084
     Model: localhost:8085/model
+    Model 4store backend: localhost:9085
     Task: localhost:8086/task
+    Task 4store backend: localhost:9086
     Validation: localhost:8087/validation
+    Validation 4store backend: localhost:9087
+
     4store: localhost:8088/
 
 NOTE: Only installed service uris are set in the config files. Model and validation service are not available yet and an external compound services is used. 
 
 # Testing services
 
-    cp $HOME/.opentox/config/default.rb $HOME/.opentox/config/test.rb  # This is a workaround, will be fixed soon.
     cd $OT_PREFIX/opentox-test
     otconfig
     ruby opentox-client.rb
 
 The tests are running for some time and will finish with a short report:
     
-    Finished tests in 50.728600s, 0.7885 tests/s, 3.1935 assertions/s.
-    40 tests, 162 assertions, 0 failures, 0 errors, 0 skips
+    Finished tests in 49.466044s, 0.8086 tests/s, 3.8410 assertions/s.
+    40 tests, 190 assertions, 0 failures, 1 errors, 0 skips
 
 To test one specific service run its script (ruby [service_name].rb) located in $OT_PREFIX/opentox-test/test.
 
