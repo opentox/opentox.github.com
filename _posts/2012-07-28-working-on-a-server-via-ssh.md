@@ -2,7 +2,7 @@
 layout: post
 title: "Working on a server via SSH"
 description: "Working on a server via SSH"
-category: General
+category: linux
 tags: [Linux, Ubuntu, Debian, Terminal, ssh, Server]
 ---
 {% include JB/setup %}

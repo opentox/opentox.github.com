@@ -2,7 +2,7 @@
 layout: post
 title: "OpenTox object internals"
 description: ""
-category: opentox-client
+category: client
 tags: [development]
 ---
 {% include JB/setup %}

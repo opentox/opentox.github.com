@@ -2,7 +2,7 @@
 layout: post
 title: "Client - server synchronisation"
 description: ""
-category: opentox-client
+category: client
 tags: []
 ---
 {% include JB/setup %}

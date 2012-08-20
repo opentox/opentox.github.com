@@ -2,7 +2,7 @@
 layout: post
 title: "Example Webservice Configuration File"
 description: ""
-category: Webservices
+category: server
 tags: [Setup, webservices]
 ---
 {% include JB/setup %}

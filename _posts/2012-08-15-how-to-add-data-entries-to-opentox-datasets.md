@@ -3,7 +3,7 @@ layout: post
 title: "How to add data entries to OpenTox datasets"
 description: ""
 category: dataset
-tags: []
+tags: [dataset]
 ---
 {% include JB/setup %}
 
