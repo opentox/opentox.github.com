@@ -2,18 +2,45 @@
 layout: post
 title: "Install opentox development environment"
 description: ""
-category: development
+category: setup
 tags: [deployment, installation, Ubuntu, Debian, Setup]
 ---
 {% include JB/setup %}
 
-How To install recent opentox services on Ubuntu or Debian
+Architecture overview and how to install recent opentox services on Ubuntu or Debian.
 
-# Installation:
+# Philosophy
+
+The [opentox installer](https://github.com/opentox/install/tree/development) provides a [POSIX](http://en.wikipedia.org/wiki/POSIX) compatible way to prepare Debian-based systems and install ISTs OpenTox compatible web-services and library code. Please report bugs [here](http://github.com/opentox/install).
+
+Apart from some basic Debian packages, no action requires root access. Everything is installed in the user's home directory. Inside it, the installer prepares the base directory (referred to as `OT_PREFIX`) for OpenTox REST services and provides libraries for the installation and shell integration of services. 
+
+Here are some more goals we had in mind when writing the installer:
+
+- Safe (existence of all binaries will be checked before running, apart from GNU Core Utils)
+- Idempotent (multiple execution incurs no changes to the system)
+- Atomic (return value of non-elementary actions asserted to be TRUE)
+- Encapsulated (everything installed in OT_PREFIX)
+- Logged (all non-elementary actions are logged)
+
+Conceptual approach:
+
+1. Configure the installer in config.sh, then run `install`. 
+2. Configure your system by adding a line to the startup file of your favorite shell (e.g. BASH with the file `~/.bashrc`) to read in `~/.opentox/opentox-ui.sh` (e.g. with `source ~/.opentox/opentox-ui.sh`), so any newly started shell will be configured. 
+3. Use the system, in particular by starting webservices (see below). For `bash` users, a set of tools (called `ot-tools`) is available.
+4. To uninstall, simply remove the line from the startup file, that's all. To save disc space also remove directory `OT_PREFIX`. To remove also your configuration, remove `~/.opentox`.
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+# Installation
 
 Installation (`development` at the point of writing this = 20/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at [github](https://github.com/opentox/install).
 
-    # Check if "sudo" is available (e.g. sudo ls)
+    # Check if "sudo" is available (e.g. sudo ls), required for base packages
     # Install git
     sudo apt-get install git 
     # Please add your ssh key at github via https://github.com/. 
