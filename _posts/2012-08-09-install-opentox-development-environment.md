@@ -15,7 +15,7 @@ Installation (`development` at the point of writing this = 20/08/2012) is tested
 
     # Check if "sudo" is available (e.g. sudo ls)
     # Install git
-    sudo apt-get install git-core 
+    sudo apt-get install git 
     # Please add your ssh key at github via https://github.com/. 
     # You may add your name/email address to the local git config.
     # Download the installer from github. 
@@ -30,14 +30,13 @@ This installation script will prepare your system for the use of `opentox` web s
 # Install opentox services
 
     . $HOME/.opentox/config/install/config.sh
-    # Download opentox-client opentox-server opentox-test algorithm compound 
-    # dataset feature and task
-    for f in opentox-client opentox-server opentox-test algorithm compound \ 
-    dataset feature task; do 
+    . $OT_PREFIX/install/utils.sh
+    # Download opentox-client opentox-server 
+    for f in opentox-client opentox-server; do 
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
-      git checkout development
-      git checkout migration
+      git checkout development >/dev/null 2>&1
+      git checkout migration >/dev/null 2>&1
     done 
     # Install services with script (bundle)
     cd $OT_PREFIX/opentox-client/bin 
@@ -46,15 +45,22 @@ This installation script will prepare your system for the use of `opentox` web s
     # Will be fixed soon.
     cd $OT_PREFIX/opentox-server/bin
     ./opentox-server-install
-    cd $OT_PREFIX
+    # Download and install algorithm compound dataset feature task opentox-test 
     for f in algorithm compound dataset feature task opentox-test; do
-      cd $OT_PREFIX/$f/bin
-      ./$f-install
+      git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
+      cd $OT_PREFIX/$f
+      git checkout development >/dev/null 2>&1
+      if [ -f $OT_PREFIX/$f/bin/$f-install ] then
+        cd $OT_PREFIX/$f/bin
+        ./$f-install    
+      fi
     done
 
 At this point `opentox` web services have been downloaded, installed and configured.   
     
-# Activate and use ot-tools
+# Activate and use ot-tools if you are using bash
+
+NOTE: ot-tools do require the use of bash shell.
 
 Add ot-tools to your .bashrc:
 
@@ -130,5 +136,5 @@ The tests are running for some time and will finish with a short report:
     Finished tests in 49.466044s, 0.8086 tests/s, 3.8410 assertions/s.
     40 tests, 190 assertions, 0 failures, 1 errors, 0 skips
 
-To test one specific servicei, run its script (ruby [service_name].rb) located in $OT_PREFIX/opentox-test/test.
+To test one specific service, run its script (ruby [service_name].rb) located in $OT_PREFIX/opentox-test/test.
 
