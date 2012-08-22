@@ -38,7 +38,7 @@ Conceptual approach:
 
 # Installation
 
-Installation (`development` at the point of writing this = 20/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at [github](https://github.com/opentox/install).
+Installation (`development` at the point of writing this = 22/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at [github](https://github.com/opentox/install).
 
 Before starting the installation please check if "sudo" is available (e.g. sudo ls), required for base packages.
 
@@ -83,6 +83,7 @@ OpenTox services(algorithm compound dataset feature task opentox-test) and tests
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
+      git checkout migration 2>/dev/null
       if [ -f $OT_PREFIX/$f/bin/$f-install ] then
         cd $OT_PREFIX/$f/bin
         ./$f-install    
@@ -107,54 +108,31 @@ All ot-tools (`otconfig`, `otstart`, `otcheck`, `otreload`, `otkill`) are availa
 
 `otconfig` is the only command not taking an argument, it sets the environment variables for all services. 
 
-Start all services and their 4store backends with:
+Start all services and the 4store backend with:
 
     otstart all 
 
-Kill all services and their 4store backends with:
+Kill all services and the 4store backend with:
     
     otkill all
 
-It is possible to manage single services and its 4store backend(e.g. `otstart dataset` to run dataset web service). 
+It is possible to manage single services (e.g. `otstart dataset` to run dataset web service). 
 
 # Access web services
 
-The default port setting for the web services and their 4store backends,  (see config files `~/.opentox/config/\*.rb`):
+The default port setting for the web services and the 4store backend,  (see config files `~/.opentox/config/\*.rb`):
 
-<table border="1">
-<tr>
-<th>Service</th>
-<th>URI</th>
-</tr>
-<tr>
-<td>Algorithm<br>Algorithm 4store backend</td>
-<td>localhost:8081/algorithm<br>localhost:9081</td>
-</tr>
-<tr>
-<td>Compound<br>Compound 4store backend</td>
-<td>localhost:8082/compound<br>localhost:9082</td>
-</tr>
-<tr>
-<td>Dataset<br>Dataset 4store backend</td>
-<td>localhost:8083/dataset<br>localhost:9083</td>
-</tr>
-<tr>
-<td>Feature<br>Feature 4store backend</td>
-<td>localhost:8084/feature<br>localhost:9084</td>
-</tr>
-<tr>
-<td>Model<br>Model 4store backend</td>
-<td>localhost:8085/model<br>localhost:9085</td>
-</tr>
-<tr>
-<td>Task<br>Task 4store backend</td>
-<td>localhost:8086/task<br>localhost:9086</td>
-</tr>
-<tr>
-<td>Validation<br>Validation 4store backend</td>
-<td>localhost:8087/validation<br>localhost:9087</td>
-</tr>
-</table> 
+| Service | URI | 
+| ------ | ------ |
+| --------------------  | ------------------------------------- |
+| Algorithm | localhost:8081/algorithm | 
+| Compound | localhost:8082/compound |
+| Dataset | localhost:8083/dataset |
+| Feature | localhost:8084/feature |
+| Model | localhost:8085/model |
+| Task | localhost:8086/task |
+| Validation | localhost:8087/validation |
+| 4store | localhost:9088/ |
 
 NOTE: Only installed service URIs are set in the config files. Model and validation service are not available yet. 
 
