@@ -40,23 +40,26 @@ Conceptual approach:
 
 Installation (`development` at the point of writing this = 20/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at [github](https://github.com/opentox/install).
 
-    # Check if "sudo" is available (e.g. sudo ls), required for base packages
+Before starting the installation please check if "sudo" is available (e.g. sudo ls), required for base packages.
+
     # Install git
     sudo apt-get install git 
-    # Please add your ssh key at github via https://github.com/. 
-    # You may add your name/email address to the local git config.
-    # Download the installer from github. 
+
+Please add your ssh key at github via https://github.com/. You may add your name/email address to the local git config.
+
+Download, configure and execute the installer. 
+
     git clone git@github.com:opentox/install.git $HOME/install
     cd $HOME/install
     git checkout development
-    # First check config.sh
+    # First check config.sh with your favorite editor
     ./install
 
 This installation script will prepare your system for the use of `opentox` web services, including installing necessary dependencies, `opentox` config, `raptor`, `rasqal`, `rbenv`, `ruby` and `4store`. 
 
 # Install opentox services
 
-First nessessary environment variables and cnfigurations will be set: 
+First necessary environment variables and configurations will be set: 
 
     . $HOME/.opentox/config/install/config.sh
     . $OT_PREFIX/install/utils.sh
@@ -153,7 +156,7 @@ The default port setting for the web services and their 4store backends,  (see c
 </tr>
 </table> 
 
-NOTE: Only installed service uris are set in the config files. Model and validation service are not available yet. 
+NOTE: Only installed service URIs are set in the config files. Model and validation service are not available yet. 
 
 # Testing services
 
