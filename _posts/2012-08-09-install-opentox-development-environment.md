@@ -84,8 +84,7 @@ OpenTox services(algorithm compound dataset feature task opentox-test) and tests
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
       git checkout migration 2>/dev/null
-      if [ -f $OT_PREFIX/$f/bin/$f-install ] 
-      then
+      if [ -f $OT_PREFIX/$f/bin/$f-install ]; then
         cd $OT_PREFIX/$f/bin
         ./$f-install    
       fi
