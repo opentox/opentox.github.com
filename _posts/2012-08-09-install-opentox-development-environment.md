@@ -164,7 +164,7 @@ NOTE: Only installed service URIs are set in the config files. Model and validat
     otconfig
     ruby opentox-client.rb
 
-The tests are running for some time and will finish with a short report:
+The tests take some time and finish with a short report:
 
     Finished tests in 43.827407s, 0.9811 tests/s, 4.4265 assertions/s.
     43 tests, 194 assertions, 2 failures, 1 errors, 0 skips
