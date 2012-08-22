@@ -84,7 +84,8 @@ OpenTox services(algorithm compound dataset feature task opentox-test) and tests
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
       git checkout migration 2>/dev/null
-      if [ -f $OT_PREFIX/$f/bin/$f-install ] then
+      if [ -f $OT_PREFIX/$f/bin/$f-install ] 
+      then
         cd $OT_PREFIX/$f/bin
         ./$f-install    
       fi
@@ -120,7 +121,7 @@ It is possible to manage single services (e.g. `otstart dataset` to run dataset 
 
 # Access web services
 
-The default port setting for the web services and the 4store backend,  (see config files `~/.opentox/config/\*.rb`):
+The default port setting for the web services and the 4store backend,  (see config files `~/.opentox/config/*.rb`):
 
 | Service | URI | 
 | ------ | ------ |
