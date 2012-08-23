@@ -59,10 +59,15 @@ This installation script will prepare your system for the use of `opentox` web s
 
 # Install opentox services
 
-First necessary environment variables and configurations will be set: 
+Load environment (general)
 
     . $HOME/.opentox/config/install/config.sh
     . $OT_PREFIX/install/utils.sh
+    
+Load environment (with bash):
+
+    . $HOME/.opentox/ot-tools.sh
+    otconfig
 
 Next opentox-client and opentox-server will be downloaded and installed.
     
