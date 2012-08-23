@@ -140,8 +140,9 @@ NOTE: Only installed service URIs are set in the config files. Model and validat
 
     cd $OT_PREFIX/opentox-test
     otconfig
-    ruby test/dataset-large.rb
     ruby opentox-client.rb
+    ruby test/dataset-large.rb
+
 
 The tests take some time and finish with a short report:
 
