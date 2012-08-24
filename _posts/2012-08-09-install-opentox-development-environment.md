@@ -38,7 +38,7 @@ Conceptual approach:
 
 # Installation
 
-Installation (`development` at the point of writing this = 22/08/2012) is tested with Debian 6.0.5 and should work with recent Ubuntu versions. Installer is available at [github](https://github.com/opentox/install).
+Installation (`development` at the point of writing this = 22/08/2012) is tested with Debian 6.0.5 and Ubuntu 11.04. Installer is available at [github](https://github.com/opentox/install).
 
 Before starting the installation please check if "sudo" is available (e.g. sudo ls), required for base packages.
 
@@ -152,7 +152,7 @@ NOTE: Only installed service URIs are set in the config files. Model and validat
 The tests take some time and finish with a short report:
 
     Finished tests in 43.827407s, 0.9811 tests/s, 4.4265 assertions/s.
-    43 tests, 194 assertions, 2 failures, 1 errors, 0 skips
+    42 tests, 194 assertions, 2 failures, 0 errors, 0 skips
 
 To test one specific service, run its script (`ruby [service_name].rb`) located in `$OT_PREFIX/opentox-test/test`.
 
