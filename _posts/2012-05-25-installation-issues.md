@@ -19,6 +19,7 @@ Proceed as follows **before installing**.:
     curl -L http://launchpadlibrarian.net/48177999/libgsl0-dev_1.14%2Bdfsg-1_amd64.deb > libgsl0-dev_1.14+dfsg-1_amd64.deb
     curl -L http://launchpadlibrarian.net/48177998/libgsl0ldbl_1.14%2Bdfsg-1_amd64.deb > libgsl0ldbl_1.14+dfsg-1_amd64.deb
     sudo dpkg -i libgsl0-dev_1.14+dfsg-1_amd64.deb
+    sudo dpkg -i libgsl0ldbl_1.14+dfsg-1_amd64.deb
 
 In the above, adjust your architecture to `i386`, if necessary (please use 64 bit software where possible).
 
