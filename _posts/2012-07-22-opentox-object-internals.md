@@ -20,6 +20,6 @@ Setting metadata
 
 There are two methods to assign metadata: `object[predicate] = value` assigns new value(s) to a predicate (replacing existing values) while `object.append subject, value` appends metadata to existing entries. In both cases `value` can be either a single entry or an array of values. You can also use convenience shortcuts like `object.title = new_title`.
 
-[Client - server synchronisation](/opentox-client/2012/07/17/client-server-synchronisation)
+[Client - server synchronisation](/client/2012/07/17/client-server-synchronisation)
 ===========================================================================================
 

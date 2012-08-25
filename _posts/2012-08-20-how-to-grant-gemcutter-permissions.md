@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to grant gemcutter perimssions"
+title: "How to grant gemcutter permissions"
 description: ""
 category: general
 tags: [development]

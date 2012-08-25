@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to solve 'cannot load such file    opentox/server' errors whens starting unicorn"
+title: "How to solve 'cannot load such file opentox/server' errors whens starting unicorn"
 description: ""
 category: server
 tags: ["Debugging"]

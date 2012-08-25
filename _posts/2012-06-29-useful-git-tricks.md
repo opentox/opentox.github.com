@@ -22,7 +22,7 @@ Proceed to [github.com](https://help.github.com/categories/18/articles), where v
 
 Here is how to solve some common issues.
 
-## How to check out a remote branch
+## Check out a remote branch
 
 Suppose there is a branch on `origin` called `foo` and you want to `checkout` this branch for the first time. Assuming you have cloned the repository, you cannot just do `git checkout foo` if `foo` was created by someone else *after* you have cloned.
 
