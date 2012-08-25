@@ -3,7 +3,7 @@ layout: post
 title: "BBRC and LAST PM Usage"
 description: "This post provides a more 'how-to' like way to using BBRC and LAST-PM via REST than the usage informations for [BBRC](http://bbrc.maunz.de#usage) and for [LAST-PM](http://last-pm.maunz.de#usage)."
 category: algorithm
-tags: [fminer, feature generation]
+tags: [Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 

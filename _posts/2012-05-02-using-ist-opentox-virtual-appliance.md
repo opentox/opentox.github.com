@@ -3,7 +3,7 @@ layout: post
 title: "IST Opentox Virtual Appliance"
 description: "**The IST Opentox Virtual Appliance is a tool that facilitates using IST's developments.**"
 category: setup
-tags: [VirtualBox, Windows]
+tags: [Windows, Setup]
 ---
 
 {% include JB/setup %}

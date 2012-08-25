@@ -3,7 +3,7 @@ layout: post
 title: "Parameter Selection with BBRC and LAST PM"
 description: "This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](/algorithm/2012/05/02/bbrc-and-last-pm-usage) on how to apply the hints in your situation."
 category: algorithm
-tags: [fminer, feature generation, BBRC, LAST-PM]
+tags: [Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
 ---
 
 {% include JB/setup %}
