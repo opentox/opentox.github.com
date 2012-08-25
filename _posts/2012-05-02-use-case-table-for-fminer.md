@@ -39,6 +39,6 @@ tags: [fminer, feature generation, BBRC, LAST-PM]
 * In BBRC, two modes for _n_-frequent subgraph mining are available. The first one does not use activity information, whereas the second one uses it to indicate occurrences of subgraphs per class (for nominal activities), which can be interesting despite deliberately not taking class correlation into account during the mining process.
 
 	
-* For all settings (except web service) [environment variables](https://raw.github.com/amaunz/fminer2/master/fminer/README) play a major role for the output format. Supported are gSpan and SMARTS, the latter as CSV or YAML. Moreover, _p_-values can be requested instead of $latex \chi^2$ test statistics.** **A special case is the [output of hit counts](http://www.maunz.de/wordpress/opentox/2011/support-calculation-fminer). While on the command line, there is a special environment variable, the webservice must be passed a special switch: -d "nr_hits".
+* For all settings (except web service) [environment variables](https://raw.github.com/amaunz/fminer2/master/fminer/README) play a major role for the output format. Supported are gSpan and SMARTS, the latter as CSV or YAML. Moreover, _p_-values can be requested instead of $latex \chi^2$ test statistics.** **A special case is the [output of hit counts](/algorithm/2012/05/02/support-calculation-in-fminer). While on the command line, there is a special environment variable, the webservice must be passed a special switch: -d "nr_hits".
 
 

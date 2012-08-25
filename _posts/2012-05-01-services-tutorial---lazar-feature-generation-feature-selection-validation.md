@@ -109,10 +109,10 @@ A quick look at the feature metadata of the result shows how many features have 
 
 
 	
-  * [Creating PC descriptors in opentox-ruby](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby)
+  * [Creating PC descriptors in opentox-ruby](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm)
 
 	
-  * [Selecting Features with opentox-ruby](http://www.maunz.de/wordpress/opentox/2012/selecting-features-with-opentox-ruby)
+  * [Selecting Features with opentox-ruby](/algorithm/2012/05/02/selecting-features-with-opentox-algorithm)
 
 
 
@@ -239,13 +239,13 @@ Prediction is completely analogous to the PC descriptor case (see above). It is 
 
 
 	
-  * [Model Building in Lazar (Data Mining and Machine Learning Methods)](http://www.maunz.de/wordpress/opentox/2012/dm-and-ml-in-lazar)
+  * [Model Building in Lazar (Data Mining and Machine Learning Methods)](/algorithm/2012/05/02/data-mining-and-machine-learning-algorithms-in-lazar)
 
 	
-  * [Lazar Models and how to trigger them](http://www.maunz.de/wordpress/opentox/2011/lazar-models-and-how-to-trigger-them)
+  * [Lazar Models and how to trigger them](/algorithm/2012/05/02/lazar-models-and-how-to-trigger-them)
 
 	
-  * [Calling BBRC and LAST-PM in three steps](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage)
+  * [Calling BBRC and LAST-PM in three steps](/algorithm/2012/05/02/bbrc-and-last-pm-usage)
 
 
 

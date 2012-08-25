@@ -121,11 +121,11 @@ That's it! The resulting feature dataset contains extensive [OWL feature metadat
 	
 * As with any dataset, resulting feature datasets may also be requested in CSV or YAML formats by specifying appropriate accept-Headers.
 
-* Further processing may include feature selection as next step. [An implementation based on Random Forests is available in opentox-ruby](http://www.maunz.de/wordpress/opentox/2012/selecting-features-with-opentox-ruby).
+* Further processing may include feature selection as next step. [An implementation based on Random Forests is available in opentox-ruby](/algorithm/2012/05/02/selecting-features-with-opentox-algorithm).
 
-* The dataset (perhaps after feature selection) can be [passed to the Lazar algorithm](http://www.maunz.de/wordpress/opentox/2011/lazar-models-and-how-to-trigger-them) as feature dataset.
+* The dataset (perhaps after feature selection) can be [passed to the Lazar algorithm](/algorithm/2012/05/02/lazar-models-and-how-to-trigger-them) as feature dataset.
 
-* From a higher perspective: A complete [tutorial](http://www.maunz.de/wordpress/opentox/2012/services-tutorial-lazar-feature-generation-feature-selection-validation) that streamlines the process.
+* From a higher perspective: A complete [tutorial](/algorithm/2012/05/01/services-tutorial---lazar-feature-generation-feature-selection-validation) that streamlines the process.
 
 
 

@@ -28,7 +28,7 @@ The next paragraph discusses how to create feature datasets. After that the whol
 # Creating a Feature Dataset
 
 
-Lazar models can be equipped with a [feature dataset](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby). This feature dataset must already exist at the time of Lazar model creation. Currently, only physico-chemical descriptors can be supplied as feature datasets. In the feature dataset, features must be annotated with the last substring of the DC.description field being
+Lazar models can be equipped with a [feature dataset](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm). This feature dataset must already exist at the time of Lazar model creation. Currently, only physico-chemical descriptors can be supplied as feature datasets. In the feature dataset, features must be annotated with the last substring of the DC.description field being
 
 
     
@@ -62,7 +62,7 @@ When POSTing a dataset URI to the Lazar algorithm webservice (and optionally a f
 
 Note: This chart displays only a subset of options. It is not necessary to pass any options apart from _dataset_uri_, which is the URI of the training dataset. The standard models are _weighted_majority_vote _for classification and _local_svm_regression_ for regression.
 
-# Summary of models, see also [this post](http://www.maunz.de/wordpress/opentox/2012/dm-and-ml-in-lazar)
+# Summary of models, see also [this post](algorithm/2012/05/02/data-mining-and-machine-learning-algorithms-in-lazar)
 
 These models are available (textual form of the leaf nodes of the flowchart)
 
@@ -111,11 +111,11 @@ Further parameters:
 	
 * pc_type: The physico-chemical type(s) when using a feature_dataset_uri.
 
-  * [See this post](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby). Short summary: supply  a comma-separated list, <br />e.g. "pc_type=constitutional,electronic"
+  * [See this post](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm). Short summary: supply  a comma-separated list, <br />e.g. "pc_type=constitutional,electronic"
 
 * lib: The library or libraries when using a feature_dataset_uri.
 
-  * [See this post](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby). Short summary: supply  a comma-separated list, e.g. "lib=cdk,openbabel"
+  * [See this post](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm). Short summary: supply  a comma-separated list, e.g. "lib=cdk,openbabel"
 
 * nr_hits: Whether subgraphs should be weighted with their occurrence counts in the instances (frequency).
 
@@ -164,12 +164,12 @@ Here are the default values of some parameters:
 
 
 	
-  * [A post](http://www.maunz.de/wordpress/opentox/2012/dm-and-ml-in-lazar) details data mining and machine learning components involved.
+  * [A post](/algorithm/2012/05/02/data-mining-and-machine-learning-algorithms-in-lazar) details data mining and machine learning components involved.
 
 	
   * The [README](https://github.com/opentox/algorithm/tree/development) details all settings.
 
 	
-  * From a higher perspective: A complete [tutorial](http://www.maunz.de/wordpress/opentox/2012/services-tutorial-lazar-feature-generation-feature-selection-validation) streamlines the process.
+  * From a higher perspective: A complete [tutorial](/algorithm/2012/05/01/services-tutorial---lazar-feature-generation-feature-selection-validation) streamlines the process.
 
 

@@ -9,7 +9,7 @@ tags: [fminer, feature generation]
 
 **This post provides a more 'how-to' like way to using BBRC and LAST-PM via REST than the usage informations for [BBRC](http://bbrc.maunz.de#usage) and for [LAST-PM](http://last-pm.maunz.de#usage).**
 
-REST is the technical basis for all OpenTox compliant services. BBRC and LAST-PM are subgraph mining methods that find chemical fragments suitable for predicting endpoints. This tutorial shows how to directly perform calls on them. In practice, they are mostly used in a larger workflow. There is a complete [tutorial](http://www.maunz.de/wordpress/opentox/2012/services-tutorial-lazar-feature-generation-feature-selection-validation) that illustrates this.
+REST is the technical basis for all OpenTox compliant services. BBRC and LAST-PM are subgraph mining methods that find chemical fragments suitable for predicting endpoints. This tutorial shows how to directly perform calls on them. In practice, they are mostly used in a larger workflow. There is a complete [tutorial](/algorithm/2012/05/01/services-tutorial---lazar-feature-generation-feature-selection-validation) that illustrates this.
 
 
 # Calling the REST interface
@@ -85,7 +85,7 @@ Call Nr. 3 above (which does the actual mining) accepts more arguments. Here are
 * BBRC and LAST-PM
 
 
-  * To get the support of patterns instead of their mere presence, use `-d nr_hits=true` on the BBRC or LAST-PM service (see [this post](http://www.maunz.de/wordpress/opentox/2011/support-calculation-in-bbrc-and-last-pm)).
+  * To get the support of patterns instead of their mere presence, use `-d nr_hits=true` on the BBRC or LAST-PM service (see [this post](/algorithm/2012/05/02/support-calculation-in-fminer)).
 
 
   * To adjust minimum frequency on the BBRC or LAST-PM service, pass `-d min_frequency=5` for a minimum frequency of 5, for example. Note that minimum frequencies are always interpreted as absolute numbers.
@@ -136,7 +136,7 @@ _Main phase:_
  For [YAML](http://en.wikipedia.org/wiki/YAML) as an easier alternative to RDF output, try requesting the result with `-H "accept:yaml"` as curl parameter.
 
 
-* Review the [list of use cases](http://www.maunz.de/wordpress/opentox/2011/use-case-table-for-fminer) supported by BBRC and LAST-PM.
+* Review the [list of use cases](/algorithm/2012/05/02/use-case-table-for-fminer) supported by BBRC and LAST-PM.
 
 
 * Try the downloadable version and install locally. Supported platforms (currently): C++, Ruby, Python, Java. Start by visiting [BBRC](http://www.maunz.de/wordpress/bbrc) and [LAST-PM](http://www.maunz.de/wordpress/latent-structure-pattern-mining) webpages and read carefully all the instructions by following links to technical documentation. The procedure for finding appropriate values for minimum frequency is completely analogous in this setting.
@@ -159,7 +159,7 @@ Instead of hard cutoffs for the set size, the user is expected to bound the mini
 ## The Regression Case
 
 
-When dealing with numerical values as target variable ([referred to as *prediction-feature*](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage)), some pruning techniques (*dynamic upper bound pruning*), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
+When dealing with numerical values as target variable ([referred to as *prediction-feature*](/algorithm/2012/05/02/bbrc-and-last-pm-usage)), some pruning techniques (*dynamic upper bound pruning*), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
 
 Regression has not been experimentally validated yet and support is therefore experimental. Meanwhile, here are some hints that alleviate possible problems in this setting. They refer to each other, but try them also individually!
 

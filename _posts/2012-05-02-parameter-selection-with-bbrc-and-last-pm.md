@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Parameter Selection with BBRC and LAST PM"
-description: "This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage) on how to apply the hints in your situation."
+description: "This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](/algorithm/2012/05/02/bbrc-and-last-pm-usage) on how to apply the hints in your situation."
 category: algorithm
 tags: [fminer, feature generation, BBRC, LAST-PM]
 ---
 
 {% include JB/setup %}
 
-**This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage) on how to apply the hints in your situation.**
+**This post gives some information on how parameters for BBRC and LAST could be selected, especially for the case of regression. Please see the [usage information](/algorithm/2012/05/02/bbrc-and-last-pm-usage) on how to apply the hints in your situation.**
 
 
 # Some Background Information
@@ -25,7 +25,7 @@ Instead of hard cutoffs for the set size, the user is expected to bound the mini
 # The Regression Case
 
 
-When dealing with numerical values as target variable ([referred to as _prediction-feature_](http://www.maunz.de/wordpress/opentox/2011/bbrc-and-last-usage)), some pruning techniques (_dynamic upper bound pruning_), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
+When dealing with numerical values as target variable ([referred to as _prediction-feature_](/algorithm/2012/05/02/bbrc-and-last-pm-usage)), some pruning techniques (_dynamic upper bound pruning_), which reduce runtime drastically for classification, are not yet applicable -  BBRC and LAST-PM disable it automatically for you. Moreover, the result set might be larger or smaller compared to classification.
 
 Regression has not been experimentally validated yet and support is therefore experimental. Meanwhile, here are some hints that alleviate possible problems in this setting. They refer to each other, but try them also individually!
 

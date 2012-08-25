@@ -29,7 +29,7 @@ In order to run feature selection on an existing dataset and obtain a dataset wi
 
 
 
-This procedure may be most useful together with physico-chemical descriptors, [which can be easily calculated in opentox-ruby](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby).
+This procedure may be most useful together with physico-chemical descriptors, [which can be easily calculated in opentox-ruby](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm).
 
 By default, missing entries are imputed by a k-nearest-neighbor approach in the rfe algorithm, which happens behind the scenes. If your dataset, however, contains some compounds that miss most or all entries, while the others have very few and random missing values, then it may be more appropriate to simply delete the former. In rfe, this can be achieved by setting the parameter _del_missing_ to _true_, e.g.
 
@@ -56,9 +56,9 @@ In this case, no imputation is tried, and all compounds with missing values are 
 
 
 	
-  * [Physico-chemical descriptor calculation in opentox-ruby](http://www.maunz.de/wordpress/opentox/2012/calculating-physico-chemical-descriptors-with-opentox-ruby)
+  * [Physico-chemical descriptor calculation in opentox-ruby](/algorithm/2012/05/02/calculating-physico-chemical-descriptors-with-opentox-algorithm)
 
 	
-  * From a higher perspective: A complete [tutorial](http://www.maunz.de/wordpress/opentox/2012/services-tutorial-lazar-feature-generation-feature-selection-validation) that streamlines the process.
+  * From a higher perspective: A complete [tutorial](/algorithm/2012/05/01/services-tutorial---lazar-feature-generation-feature-selection-validation) that streamlines the process.
 
 
