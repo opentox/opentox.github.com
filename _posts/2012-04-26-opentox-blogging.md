@@ -11,30 +11,54 @@ For OpenTox GitHub organization members only
 
 Install Jekyll
 --------------
+<br />
+
     gem install jekyll
 
+<br />
 Get opentox.github.com
 ----------------------
+<br />
+
     git clone git@github.com:opentox/opentox.github.com.git
 
+<br />
 Preview
 -------
+<br />
+
     cd opentox.github.com
     jekyll --server
-view at http://localhost:4000
 
+view at `http://localhost:4000`
+
+<br />
 Blog
 ----
-    rake post title="foo"
-edit blog
+<br />
 
+    rake post title="foo"
+
+Edit blog at `_posts/[...]foo.md. Use a [spell-checker](/linux/2012/05/18/using-vim/).
+
+<br />
 Categories and tags
 -------------------
+<br />
 
-Categories should match github projects (e.g. opentox-client, algorithm, ...) or "general" for topics that apply to more than one project. Use tags to refer to other concepts (e.g REST, "support vector machines", ...).
+Categories should match github projects (e.g. client, server, algorithm, ...) or "general" for topics that apply to more than one project. 
+For larger collections of related documents that would go to "general", invent a new category to avoid crowding the "general" category.
+Use tags to refer to concepts (e.g REST, "support vector machines", ...). Please 
+
+- re-use existing tags as much as possible. 
+- when re-using, be sure to use the verbatim expression (e.g. capitalization).
+
+This is important for the 'Related Posts' functionality (although it does not seem to work on Github) and for users who want to get an overview of what is covered.
 
 Publish
 -------
+<br />
+
     git add .
     git commit -m "Add new content"
     git push 
