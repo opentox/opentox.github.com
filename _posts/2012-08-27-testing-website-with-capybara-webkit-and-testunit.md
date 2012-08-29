@@ -41,7 +41,7 @@ you can ignore warnings like:
   [config] failed to initialise udev<br>*
 
 
-You can integrate this command to your test.
+You can integrate this command to your test. For the following example `export 'DISPLAY=localhost:1.0'` is already in ~/.bashrc.
 
 # Example test:
 
@@ -64,7 +64,6 @@ You can integrate this command to your test.
 
       def test_00_start
         `Xvfb :1 -screen 0 1024x768x16 -nolisten inet6 &`
-        `export 'DISPLAY=localhost:1.0'`
         sleep 2
       end
       
@@ -76,7 +75,6 @@ You can integrate this command to your test.
       def test_99_kill
         Capybara.reset!
         `pidof Xvfb|xargs kill`
-        Capybara::Session.new(:webkit)
       end
 
     end
