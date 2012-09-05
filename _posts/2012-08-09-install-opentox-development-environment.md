@@ -84,7 +84,7 @@ Next opentox-client and opentox-server will be downloaded and installed.
 
 OpenTox services(algorithm compound dataset feature task opentox-test) and tests will be downloaded and installed. 
 
-    for f in algorithm compound dataset feature task opentox-test; do
+    for f in algorithm compound dataset feature model task opentox-test; do
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
