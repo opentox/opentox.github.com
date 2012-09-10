@@ -2,8 +2,8 @@
 layout: post
 title: "Testing website with capybara-webkit and test/unit"
 description: ""
-category: testing 
-tags: [headless brwoser, testing]
+category: Testing 
+tags: [Headless browser, Testing]
 ---
 {% include JB/setup %}
 ---
