@@ -15,7 +15,8 @@ You need to install capybara and capybara-webkit as gem. Capybara-webkit require
   `apt-get install qt4-dev-tools`<br>
   `apt-get install xvfb`
 
-as sudo. This works for Debian.
+as sudo. This works for Debian Squeeze. If **libqt4-dev** is not auto-installed you have to install it manually.
+  `apt-get install libqt4-dev`
 
 # Install the gems:
 
