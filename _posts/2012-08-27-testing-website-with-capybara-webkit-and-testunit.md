@@ -12,7 +12,8 @@ tags: [headless brwoser, testing]
 
 You need to install capybara and capybara-webkit as gem. Capybara-webkit requires two system libraries **qt4** and **xvfb**. To install execute:
 
-  `apt-get install gt4-dev-tools xvfb`
+  `apt-get install qt4-dev-tools`<br>
+  `apt-get install xvfb`
 
 as sudo. This works for Debian.
 
@@ -73,7 +74,6 @@ You can integrate this command to your test. For the following example `export '
       end
 
       def test_99_kill
-        Capybara.reset!
         `pidof Xvfb|xargs kill`
       end
 
