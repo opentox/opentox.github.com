@@ -2,7 +2,7 @@
 layout: post
 title: "error message segmentation faults"
 description: "sometimes error messge appears about segmentation faults"
-category: Client 
+category: client 
 tags: [Debugging]
 ---
 {% include JB/setup %}
