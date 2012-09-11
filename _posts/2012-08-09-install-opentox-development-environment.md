@@ -151,8 +151,7 @@ NOTE: Only installed service URIs are set in the config files. Model and validat
 
 The tests take some time and finish with a short report:
 
-    Finished tests in 43.827407s, 0.9811 tests/s, 4.4265 assertions/s.
-    42 tests, 194 assertions, 2 failures, 0 errors, 0 skips
+    Finished tests in 44.690815s, 0.9622 tests/s, 4.4528 assertions/s.
+    43 tests, 199 assertions, 1 failures, 0 errors, 0 skips
 
 To test one specific service, run its script (`ruby [service_name].rb`) located in `$OT_PREFIX/opentox-test/test`.
-
