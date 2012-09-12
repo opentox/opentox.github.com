@@ -53,7 +53,7 @@ Download, configure and execute the installer.
     cd $HOME/install
     git checkout development
     # First check config.sh with your favorite editor
-    ./install
+    ./install silent
 
 This installation script will prepare your system for the use of `opentox` web services, including installing necessary dependencies, `opentox` config, `raptor`, `rasqal`, `rbenv`, `ruby` and `4store`. 
 
@@ -78,9 +78,9 @@ Next opentox-client and opentox-server will be downloaded and installed.
       git checkout migration 2>/dev/null
     done 
     cd $OT_PREFIX/opentox-client/bin 
-    ./opentox-client-install 
+    ./opentox-client-install silent
     cd $OT_PREFIX/opentox-server/bin
-    ./opentox-server-install
+    ./opentox-server-install silent
 
 OpenTox services(algorithm compound dataset feature task opentox-test) and tests will be downloaded and installed. 
 
@@ -91,9 +91,10 @@ OpenTox services(algorithm compound dataset feature task opentox-test) and tests
       git checkout migration 2>/dev/null
       if [ -f $OT_PREFIX/$f/bin/$f-install ]; then
         cd $OT_PREFIX/$f/bin
-        ./$f-install    
+        ./$f-install silent
       fi
     done
+    notify
 
 At this point `opentox` web services have been downloaded, installed and configured.   
     
