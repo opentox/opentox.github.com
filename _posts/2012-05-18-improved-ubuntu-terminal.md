@@ -85,7 +85,7 @@ Example: to get an ä press `CapsLock`-`a`, Ä with `CapsLock`-`Shift`-`A`.
 
 ## Using **Terminator**, the Cool Terminal Emulator
 
-**Terminator** is a terminal emulator that can split screens and is in many ways an [improvement](http://software.jessies.org/terminator/) over the built-in gnome-terminal. 
+**Terminator** is a terminal emulator that can split screens and is in many ways an [improvement](http://lifehacker.com/5858676/the-best-terminal-emulator-for-linux) over the built-in gnome-terminal. 
 
 ![Terminator](/images/terminator.png)
 
