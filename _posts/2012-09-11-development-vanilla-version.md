@@ -7,7 +7,7 @@ tags: [Lazar, Fminer, 4store, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 
-[Install development](http://opentox.github.com/setup/2012/08/09/install-opentox-development-environment/) version, using `bash`. Make sure ot-tools are available (instert `ot` and press `<TAB>`).
+[Install development](http://opentox.github.com/setup/2012/08/09/install-opentox-development-environment/) version, using `bash`. Make sure ot-tools are available (insert `ot` and press `<TAB>`).
 
 Source from `$HOME`:
 
