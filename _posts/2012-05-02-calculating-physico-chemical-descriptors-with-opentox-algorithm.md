@@ -12,7 +12,7 @@ tags: [Feature Generation, Feature Selection, Tutorials]
 Three libraries are employed for descriptor calculation:
 
 
-* [Chemistry Development Kit](http://cdk.sf.net), developed by Chris Steinbeck, Egon Willighagen, and others.
+* [Chemistry Development Kit](http://cdk.sf.net) (CDK), developed by Chris Steinbeck, Egon Willighagen, and others.
 
 
 * [OpenBabel](http://openbabel.sf.net), developed by Noel O'Boyle and others.
@@ -21,7 +21,7 @@ Three libraries are employed for descriptor calculation:
 * [Joelib2](http://sourceforge.net/projects/joelib/), developed by Jörg Wegener.
 
 
-CDK and OpenBabel are actively maintained packages with a large community, while Joelib seems to be a one-man effort that has reached its final state.
+CDK and OpenBabel are actively maintained packages with a large community, while Joelib seems is more or less a single man's work.
 
 Descriptors have been categorized across libraries. It is possible to calculate descriptors individually, or calculate groups of descriptors according to categories and/or libraries.
 
@@ -29,7 +29,7 @@ Descriptors have been categorized across libraries. It is possible to calculate 
 # Categories
 
 
-Descriptors were categorized based on work by [Guha](http://www.rguha.net/code/java/cdkdesc.html). The list gives code names and number of descriptors in braces:
+Descriptors were categorized based on work by [R. Guha](http://www.rguha.net/code/java/cdkdesc.html). The list gives code names and number of descriptors in braces:
 
 	
 * _geometrical (20)_
@@ -60,25 +60,23 @@ Three libraries are employed. The list gives code names and number of descriptor
 * _joelib (32)_
 
 
-**Note:** CDK descriptors are calculated via REST calls to [Ambit](http://ambit.sf.net), while the others are derived locally on the server.
-
 
 # Creating a Feature Dataset
 
 
-The deployment on ot-test.in-silico.ch is used to demonstrate the usage:
+![Descriptor Calculation](/images/pc.png)
 
+
+The deployment on `ot-test.in-silico.ch` is used to demonstrate the usage:
 
 
 	
-* Get a list of all descriptors: Query the pc descriptor service without parameters.
-
+Get a list of all descriptors: Query the pc descriptor service without parameters.
     
     curl "http://ot-test.in-silico.ch/algorithm/pc"
     
-
 	
-* Calculate all descriptors (using _AllDescriptors_ from the above list) by POSTing a dataset uri.
+Calculate all descriptors (using *AllDescriptors* from the above list) by POSTing a dataset uri.
 
     
     curl -X POST \
@@ -87,7 +85,7 @@ The deployment on ot-test.in-silico.ch is used to demonstrate the usage:
     pc/AllDescriptors"
     
 
-Pass arguments _pc_type_ and/or _lib_  to constrain the query to certain categories and/or libraries. Use code names from above as argument values. E.g., to calculate constitutional and electronic descriptors from CDK, use pc_type=constitutional,electronic and lib=cdk.
+Pass arguments *pc_type* and/or *lib* to constrain the query to certain categories and/or libraries. Use code names from above as argument values. E.g., to calculate constitutional and electronic descriptors from CDK, use `pc_type=constitutional,electronic` and `lib=cdk`.
 
 
     curl -X POST \
@@ -97,7 +95,7 @@ Pass arguments _pc_type_ and/or _lib_  to constrain the query to certain catego
     "http://ot-test.in-silico.ch/algorithm/pc/AllDescriptors"
 
 
-Clearly, it is possible to combine values by appending them in a comma-separated list.
+It is possible to combine values by appending them in a comma-separated list. Moreover,
 
 * Calculate individual descriptors by POSTing to one of the other URIs from the list.
 
@@ -107,17 +105,14 @@ Clearly, it is possible to combine values by appending them in a comma-separated
 That's it! The resulting feature dataset contains extensive [OWL feature metadata](http://opentox.org/data/documents/development/RDF%20files):
 
 
-* OT.hasSource: The dataset passed as _dataset_uri_ argument
+* `OT.hasSource`: The dataset passed as *dataset_uri* argument
 
-* DC.creator: The webservice used to calculate the feature
+* `DC.creator`: The webservice used to calculate the feature
 
-* DC.description: Free text with a human readable description, library, and category of the feature
-
-
+* `DC.description`: Free text with a human readable description, library, and category of the feature
 
 
 # Notes
-
 	
 * As with any dataset, resulting feature datasets may also be requested in CSV or YAML formats by specifying appropriate accept-Headers.
 
