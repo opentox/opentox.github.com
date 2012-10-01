@@ -16,7 +16,7 @@ If A&A is activated:
 
 1.  every request is disallowed.
 2.  you can define exeptions in the configuration file => __CONFIGURATION__
-  *  authentification exeptions
+  *  authentication exeptions
   *  authorization exeptions
 3.   you can allow one or more REST request (GET, POST, PUT, DELETE) to an URI controlled by the openSSO server, defined in policies. => __POLICIES__
 
