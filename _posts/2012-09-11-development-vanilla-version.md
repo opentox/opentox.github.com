@@ -42,7 +42,7 @@ Load dataset.
 <hr>
 <br>
 
-Calculate benzene PC descriptors, constrained by `lib`:
+Calculate benzene PC descriptors, constrained by `pc_type`:
 
     curl \
     --data-urlencode "pc_type=geometrical"  \
@@ -61,7 +61,7 @@ As RDF/XML:
     --data-urlencode "pc_type=geometrical" \
     -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
 
-Calculate dataset PC descriptors, constrained by `lib`:
+Calculate dataset PC descriptors, constrained by `pc_type`:
 
     task=`curl \
     --data-urlencode "pc_type=geometrical"  \
