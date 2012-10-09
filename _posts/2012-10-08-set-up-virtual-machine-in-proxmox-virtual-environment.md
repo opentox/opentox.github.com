@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 
 
-![Proxmox Virtual Environment](/images/fw_dmz.gif)
+![Proxmox Virtual Environment](/images/fw_dmz.png)
 
 ##Scenario
 
