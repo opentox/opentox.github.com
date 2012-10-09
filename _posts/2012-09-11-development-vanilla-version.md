@@ -36,6 +36,45 @@ Load dataset.
     ds=`get_result "$task"`
     echo "hamster: $ds" 
 
+
+<br>
+<br>
+<hr>
+<br>
+
+Calculate benzene PC descriptors, constrained by `pc_type`:
+
+    curl \
+    --data-urlencode "pc_type=geometrical"  \
+    -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
+
+Constrained by `lib` and `pc_type`:
+
+    curl \
+    --data-urlencode "lib=joelib" \
+    --data-urlencode "pc_type=geometrical"  \
+    -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
+
+As RDF/XML:
+
+    curl -H "accept:application/rdf+xml" \
+    --data-urlencode "pc_type=geometrical" \
+    -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
+
+Calculate dataset PC descriptors, constrained by `pc_type`:
+
+    task=`curl \
+    --data-urlencode "pc_type=geometrical"  \
+    -X POST $ds/pc`
+    pc_fds=`get_result "$task"`
+    echo "pc feature ds: $pc_fds"
+
+
+<br>
+<br>
+<hr>
+<br>
+
 Mine subgraphs. 
 
     # bbrc feature ds
