@@ -90,7 +90,10 @@ Mine subgraphs.
 Make Lazar models with substructural descriptors. 
  
     # create lazar m w/ bbrc
-    task=`curl -X POST --data-urlencode "dataset_uri=$ds" $lh:8081/algorithm/lazar`
+    task=`curl -X POST \
+    --data-urlencode "dataset_uri=$ds" \
+    --data-urlencode "feature_generation_uri=$lh:8081/algorithm/fminer/bbrc" \
+    $lh:8081/algorithm/lazar`
     lazar_m_bbrc=`get_result "$task"`
     echo "Hamster model with bbrc: $lazar_m_bbrc"
 
@@ -102,21 +105,44 @@ Make Lazar models with substructural descriptors.
     lazar_m_last=`get_result "$task"` 
     echo "Hamster model with last-pm: $lazar_m_last" 
 
+Make Lazar models with pc descriptors.
+
+    # create lazar m w/ bbrc
+    task=`curl -X POST \
+    --data-urlencode "dataset_uri=$ds" \
+    --data-urlencode "feature_dataset_uri=$pc_fds" \
+    --data-urlencode "feature_generation_uri=$ds/pc" \
+    $lh:8081/algorithm/lazar`
+    lazar_m_pc=`get_result "$task"`
+    echo "Hamster model with pc: $lazar_m_pc"
+
+Feature dataset generated on-the-fly when `feature_dataset_uri` omitted.
+
+
 Make predictions with BBRC (LAST-PM would also work).
 
-    # make benzene prediction w lazar m w/ bbrc
+    # make benzene prediction w/ lazar m w/ bbrc
     task=`curl -X POST \
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H" \
     $lazar_m_bbrc`
     lazar_p_bbrc=`get_result "$task"`
     echo "Benzene prediction with bbrc model: $lazar_p_bbrc" 
 
+
+    # make benzene prediction w/ lazar m w/ pc
+    task=`curl -X POST \
+    --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H" \
+    $lazar_m_pc`
+    lazar_p_bbrc=`get_result "$task"`
+    echo "Benzene prediction with pc model: $lazar_p_pc" 
+
+
     # make a database prediction
     task=`curl -X POST \
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C12H12N2O3/c1-2-12(8-6-4-3-5-7-8)9(15)13-11(17)14-10(12)16/h3-7H,2H2,1H3,(H2,13,14,15,16,17)" \ 
     $lazar_m_bbrc`
     lazar_p_bbrc=`get_result "$task"`
-    echo "Benzene prediction with bbrc model: $lazar_p_bbrc" 
+    echo "Database prediction with bbrc model: $lazar_p_bbrc" 
 
 The result dataset does not yet contain verbose information (neighbors etc).
 
