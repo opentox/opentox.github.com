@@ -55,12 +55,6 @@ Constrained by `lib` and `pc_type`:
     --data-urlencode "pc_type=geometrical"  \
     -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
 
-As RDF/XML:
-
-    curl -H "accept:application/rdf+xml" \
-    --data-urlencode "pc_type=geometrical" \
-    -X POST http://localhost:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H/pc
-
 Calculate dataset PC descriptors, constrained by `pc_type`:
 
     task=`curl \
@@ -69,11 +63,11 @@ Calculate dataset PC descriptors, constrained by `pc_type`:
     pc_fds=`get_result "$task"`
     echo "pc feature ds: $pc_fds"
 
-
 <br>
 <br>
 <hr>
 <br>
+
 
 Mine subgraphs. 
 
@@ -87,25 +81,18 @@ Mine subgraphs.
     last_fds=`get_result "$task"`
     echo "last-pm feature ds: $last_fds" 
 
-Make Lazar models with substructural descriptors. 
+Make Lazar model with bbrc descriptors. 
  
     # create lazar m w/ bbrc
     task=`curl -X POST \
     --data-urlencode "dataset_uri=$ds" \
+    --data-urlencode "feature_dataset_uri=$bbrc_fds" \
     --data-urlencode "feature_generation_uri=$lh:8081/algorithm/fminer/bbrc" \
     $lh:8081/algorithm/lazar`
     lazar_m_bbrc=`get_result "$task"`
     echo "Hamster model with bbrc: $lazar_m_bbrc"
 
-    # create lazar m w/ last-pm
-    task=`curl -X POST \
-    --data-urlencode "dataset_uri=$ds" \
-    --data-urlencode "feature_generation_uri=$lh:8081/algorithm/fminer/last" \
-    $lh:8081/algorithm/lazar`
-    lazar_m_last=`get_result "$task"` 
-    echo "Hamster model with last-pm: $lazar_m_last" 
-
-Make Lazar models with pc descriptors.
+Make Lazar model with pc descriptors.
 
     # create lazar m w/ bbrc
     task=`curl -X POST \
@@ -118,8 +105,13 @@ Make Lazar models with pc descriptors.
 
 Feature dataset generated on-the-fly when `feature_dataset_uri` omitted.
 
+<br>
+<br>
+<hr>
+<br>
 
-Make predictions with BBRC (LAST-PM would also work).
+
+Make predictions with BBRC.
 
     # make benzene prediction w/ lazar m w/ bbrc
     task=`curl -X POST \
@@ -129,13 +121,17 @@ Make predictions with BBRC (LAST-PM would also work).
     echo "Benzene prediction with bbrc model: $lazar_p_bbrc" 
 
 
+Make predictions with PC.
+
     # make benzene prediction w/ lazar m w/ pc
     task=`curl -X POST \
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H" \
     $lazar_m_pc`
-    lazar_p_bbrc=`get_result "$task"`
+    lazar_p_pc=`get_result "$task"`
     echo "Benzene prediction with pc model: $lazar_p_pc" 
 
+
+Make a database prediction
 
     # make a database prediction
     task=`curl -X POST \
