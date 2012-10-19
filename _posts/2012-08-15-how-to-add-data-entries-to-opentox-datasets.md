@@ -19,11 +19,11 @@ Example:
     feature1 = Feature.new nil, @@subjectid
     feature1.title = "my first feature title"
     # set more metadata
-    feature1.puts
+    feature1.put
     feature2 = Feature.new nil, @@subjectid
     feature2.title = "my second feature title"
     # set more metadata
-    feature2.puts
+    feature2.put
 
     # add features (i.e. set table headers)
     dataset.features = [feature1, feature2]
