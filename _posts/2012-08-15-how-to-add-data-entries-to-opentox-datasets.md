@@ -37,6 +37,6 @@ Example:
     dataset << [ compound, false, 1.0 ]
 
     # save
-    dataset.save
+    dataset.put
 
 You can find more examples in [opentox-test/test/dataset.rb](https://github.com/opentox/opentox-test/blob/development/test/dataset.rb).

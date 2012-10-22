@@ -38,16 +38,14 @@ Conceptual approach:
 
 # Installation
 
-Installation (`development` at the point of writing this = 22/08/2012) is tested with Debian 6.0.5 and Ubuntu 11.04. Installer is available at [github](https://github.com/opentox/install).
+Installation (`development` at the point of writing this = 08/2012) tested with Debian 6.0.5 and Ubuntu 11.04. Installer available at [github](https://github.com/opentox/install).
 
-Before starting the installation please check if "sudo" is available (e.g. sudo ls), required for base packages.
+Check you can run "sudo" commands (e.g. `sudo ls`), which is required for base packages. Install git:
 
     # Install git
     sudo apt-get install git 
 
-Please add your ssh key at github via https://github.com/. You may add your name/email address to the local git config.
-
-Download, configure and execute the installer. 
+Add your public key at `https://github.com`. Download, configure and execute the installer:
 
     git clone git@github.com:opentox/install.git $HOME/install
     cd $HOME/install
@@ -55,9 +53,9 @@ Download, configure and execute the installer.
     # First check config.sh with your favorite editor
     ./install silent
 
-This installation script will prepare your system for the use of `opentox` web services, including installing necessary dependencies, `opentox` config, `raptor`, `rasqal`, `rbenv`, `ruby` and `4store`. 
+This will prepare the system for opentox web services, including dependencies. 
 
-# Install opentox services
+# Install OpenTox services
 
 Load environment (general)
 
@@ -69,7 +67,7 @@ Load environment (with bash):
     . $HOME/.opentox/ot-tools.sh
     otconfig
 
-Next opentox-client and opentox-server will be downloaded and installed.
+Download and install opentox-client and opentox-server:
     
     for f in opentox-client opentox-server; do 
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
@@ -82,7 +80,7 @@ Next opentox-client and opentox-server will be downloaded and installed.
     cd $OT_PREFIX/opentox-server/bin
     ./opentox-server-install silent
 
-OpenTox services(algorithm compound dataset feature task opentox-test) and tests will be downloaded and installed. 
+Download and install services and tests:
 
     for f in algorithm compound dataset feature model task opentox-test; do
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
@@ -96,11 +94,12 @@ OpenTox services(algorithm compound dataset feature task opentox-test) and tests
     done
     notify
 
-At this point `opentox` web services have been downloaded, installed and configured.   
+At this point web services have been downloaded, installed and configured.   
     
-# Activate and use ot-tools if you are using bash
 
-NOTE: ot-tools do require the use of bash shell.
+# Activate and use ot-tools for bash
+
+NOTE: ot-tools require bash.
 
 Add ot-tools to your .bashrc:
 
@@ -112,7 +111,7 @@ All ot-tools (`otconfig`, `otstart`, `otcheck`, `otreload`, `otkill`) are availa
     [otstart|otcheck|otreload|otkill] [all|algorithm|compound|dataset|feature|
     model|task|validation|4store]
 
-`otconfig` is the only command not taking an argument, it sets the environment variables for all services. 
+`otconfig` is the only command not taking an argument. It sets the environment variables for all services. 
 
 Start all services and the 4store backend with:
 
@@ -155,4 +154,4 @@ The tests take some time and finish with a short report:
     Finished tests in 44.690815s, 0.9622 tests/s, 4.4528 assertions/s.
     43 tests, 199 assertions, 1 failures, 0 errors, 0 skips
 
-To test one specific service, run its script (`ruby [service_name].rb`) located in `$OT_PREFIX/opentox-test/test`.
+To test one specific service, run its script (`ruby [service_name].rb`) in `$OT_PREFIX/opentox-test/test`.
