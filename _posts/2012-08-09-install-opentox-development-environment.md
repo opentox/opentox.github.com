@@ -20,15 +20,15 @@ Here are some more goals we had in mind when writing the installer:
 - Safe (existence of all binaries will be checked before running, apart from GNU Core Utils)
 - Idempotent (multiple execution incurs no changes to the system)
 - Atomic (return value of non-elementary actions asserted to be TRUE)
-- Encapsulated (everything installed in OT_PREFIX)
+- Encapsulated (everything installed in `OT_PREFIX`)
 - Logged (all non-elementary actions are logged)
 
 Conceptual approach:
 
 1. Configure the installer in config.sh, then run `install`. 
-2. Configure your system by adding a line to the startup file of your favorite shell (e.g. BASH with the file `~/.bashrc`) to read in `~/.opentox/opentox-ui.sh` (e.g. with `source ~/.opentox/opentox-ui.sh`), so any newly started shell will be configured. 
-3. Use the system, in particular by starting webservices (see below). For `bash` users, a set of tools (called `ot-tools`) is available.
-4. To uninstall, simply remove the line from the startup file, that's all. To save disc space also remove directory `OT_PREFIX`. To remove also your configuration, remove `~/.opentox`.
+2. Configure the system by adding a line to the startup file of your favorite shell (e.g. BASH with the file `~/.bashrc`) to read in `~/.opentox/opentox-ui.sh` (e.g. with `source ~/.opentox/opentox-ui.sh`), so any newly started shell will be configured. 
+3. Use the system, in particular by starting webservices (see below). For BASH users, a set of tools (ot-tools) is available.
+4. To uninstall, simply remove the line from the startup file. To save disc space also remove directory `OT_PREFIX` (not recommended). To remove also the configuration, remove `~/.opentox` (not recommended).
 
 <br>
 <br>
@@ -57,12 +57,12 @@ This will prepare the system for opentox web services, including dependencies.
 
 # Install OpenTox services
 
-Load environment (general)
+Load environment (general):
 
     . $HOME/.opentox/config/install/config.sh
     . $OT_PREFIX/install/utils.sh
     
-Load environment (with bash):
+Load environment (with BASH):
 
     . $HOME/.opentox/ot-tools.sh
     otconfig
@@ -94,14 +94,14 @@ Download and install services and tests:
     done
     notify
 
-At this point web services have been downloaded, installed and configured.   
+OpenTox compatible web services are now installed and configured.   
     
 
-# Activate and use ot-tools for bash
+# Activate and use ot-tools for BASH 
 
-NOTE: ot-tools require bash.
+NOTE: ot-tools require BASH.
 
-Add ot-tools to your .bashrc:
+Add ot-tools to your `.bashrc`:
 
     echo '. $HOME/.opentox/ot-tools.sh' >> ~/.bashrc
     # source .bashrc or restart shell
