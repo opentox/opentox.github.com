@@ -7,7 +7,7 @@ tags: [Lazar, Fminer, 4store, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 
-[Install development](http://opentox.github.com/setup/2012/08/09/install-opentox-development-environment/) version, using `bash`. Make sure ot-tools are available (insert `ot` and press `<TAB>`).
+[Install development](http://opentox.github.com/setup/2012/08/09/install-opentox-development-environment/) version, using `bash`. Make sure ot-tools are available (type `ot` and press `<TAB>`).
 
 Source from `$HOME`:
 
@@ -74,12 +74,12 @@ Mine subgraphs.
     # bbrc feature ds
     task=`curl -X POST --data-urlencode "dataset_uri=$ds" $lh:8081/algorithm/fminer/bbrc`
     bbrc_fds=`get_result "$task"`
-    echo "bbrc feature ds: $bbrc_fds" 
+    echo "bbrc_fds: $bbrc_fds" 
 
     # last-pm feature ds
     task=`curl -X POST --data-urlencode "dataset_uri=$ds" $lh:8081/algorithm/fminer/last`
     last_fds=`get_result "$task"`
-    echo "last-pm feature ds: $last_fds" 
+    echo "last_fds: $last_fds" 
 
 Make Lazar model with bbrc descriptors. 
  
@@ -90,18 +90,18 @@ Make Lazar model with bbrc descriptors.
     --data-urlencode "feature_generation_uri=$lh:8081/algorithm/fminer/bbrc" \
     $lh:8081/algorithm/lazar`
     lazar_m_bbrc=`get_result "$task"`
-    echo "Hamster model with bbrc: $lazar_m_bbrc"
+    echo "lazar_m_bbrc: $lazar_m_bbrc"
 
 Make Lazar model with pc descriptors.
 
-    # create lazar m w/ bbrc
+    # create lazar m w/ pc
     task=`curl -X POST \
     --data-urlencode "dataset_uri=$ds" \
     --data-urlencode "feature_dataset_uri=$pc_fds" \
     --data-urlencode "feature_generation_uri=$ds/pc" \
     $lh:8081/algorithm/lazar`
     lazar_m_pc=`get_result "$task"`
-    echo "Hamster model with pc: $lazar_m_pc"
+    echo "lazar_m_pc: $lazar_m_pc"
 
 Feature dataset generated on-the-fly when `feature_dataset_uri` omitted.
 
@@ -118,7 +118,7 @@ Make predictions with BBRC.
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H" \
     $lazar_m_bbrc`
     lazar_p_bbrc=`get_result "$task"`
-    echo "Benzene prediction with bbrc model: $lazar_p_bbrc" 
+    echo "lazar_p_bbrc: $lazar_p_bbrc" 
 
 
 Make predictions with PC.
@@ -128,7 +128,7 @@ Make predictions with PC.
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H" \
     $lazar_m_pc`
     lazar_p_pc=`get_result "$task"`
-    echo "Benzene prediction with pc model: $lazar_p_pc" 
+    echo "lazar_p_pc: $lazar_p_pc" 
 
 
 Make a database prediction
@@ -137,10 +137,23 @@ Make a database prediction
     task=`curl -X POST \
     --data-urlencode "compound_uri=$lh:8082/compound/InChI=1S/C12H12N2O3/c1-2-12(8-6-4-3-5-7-8)9(15)13-11(17)14-10(12)16/h3-7H,2H2,1H3,(H2,13,14,15,16,17)" \ 
     $lazar_m_bbrc`
-    lazar_p_bbrc=`get_result "$task"`
-    echo "Database prediction with bbrc model: $lazar_p_bbrc" 
+    lazar_db_bbrc=`get_result "$task"`
+    echo "lazar_db_bbrc: $lazar_db_bbrc" 
 
-The result dataset does not yet contain verbose information (neighbors etc).
+Make a dataset prediction
+
+    # make a dataset prediction
+    task=`curl -X POST -F "file=@opentox-ruby/opentox-test/test/data/EPAFHM.mini.csv;type=text/csv" http://localhost:8083/dataset`
+    mini=`get_result $task`
+    echo  "mini: $mini"
+    task=`curl -X POST \
+    --data-urlencode "dataset_uri=$mini" \
+    $lazar_m_bbrc`
+    lazar_db_bbrc=`get_result "$task"`
+    echo "lazar_ds_bbrc: $lazar_ds_bbrc"
+
+The result dataset has a format described [here](http://goo.gl/dErI9).
+
 
 The example below demonstrates how much time each step approximately consumes during prediction. Call is: 
 
