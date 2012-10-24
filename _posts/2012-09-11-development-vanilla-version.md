@@ -61,7 +61,7 @@ Calculate dataset PC descriptors, constrained by `pc_type`:
     --data-urlencode "pc_type=geometrical"  \
     -X POST $ds/pc`
     pc_fds=`get_result "$task"`
-    echo "pc feature ds: $pc_fds"
+    echo "pc_fds: $pc_fds"
 
 <br>
 <br>
@@ -149,7 +149,7 @@ Make a dataset prediction
     task=`curl -X POST \
     --data-urlencode "dataset_uri=$mini" \
     $lazar_m_bbrc`
-    lazar_db_bbrc=`get_result "$task"`
+    lazar_ds_bbrc=`get_result "$task"`
     echo "lazar_ds_bbrc: $lazar_ds_bbrc"
 
 The result dataset has a format described [here](http://goo.gl/dErI9).
