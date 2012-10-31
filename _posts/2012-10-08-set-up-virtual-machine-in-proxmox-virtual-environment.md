@@ -97,6 +97,8 @@ Proxmox has created a new VM. __Do not start it__. Restore your snapshot MyReady
  
     qmrestore MyReadyDebian-disk.tar 10X -force 
 
+__IMPORTANT__ change the MAC address of the network device. Or remove the network device and add a new one (this will also create a new MAC address).  
+
 Start the virtual machine via the proxmox webinterface.
 
 ### Setup VM and networking with the Proxmox console
