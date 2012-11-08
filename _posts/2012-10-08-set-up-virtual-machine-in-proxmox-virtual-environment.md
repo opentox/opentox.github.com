@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Set Up Virtual Machine in Proxmox Virtual Environment"
-description: ""
-category: 
-tags: []
+description: "Short description of a scenario "
+category: server 
+tags: [Setup]
 ---
 {% include JB/setup %}
 
@@ -47,7 +47,7 @@ dmz and network is defined in `/etc/shorewall/interfaces`
 
 ##Apache 2 Setup
 
-Let's supose to setup a website mysite.net at the virtual machine 10.0.0.101. Edit `/etc/apache2/sites-available/mysite` 
+Let's suppose to setup a website mysite.net at the virtual machine 10.0.0.101. Edit `/etc/apache2/sites-available/mysite` 
 
     <VirtualHost *:80>
         ProxyPreserveHost On
