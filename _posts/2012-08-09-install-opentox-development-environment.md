@@ -73,7 +73,6 @@ Download and install opentox-client and opentox-server:
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
-      git checkout migration 2>/dev/null
     done 
     cd $OT_PREFIX/opentox-client/bin 
     ./opentox-client-install silent
@@ -86,7 +85,6 @@ Download and install services and tests:
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
-      git checkout migration 2>/dev/null
       if [ -f $OT_PREFIX/$f/bin/$f-install ]; then
         cd $OT_PREFIX/$f/bin
         ./$f-install silent
