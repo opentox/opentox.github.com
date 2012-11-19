@@ -3,7 +3,7 @@ layout: post
 title: "Support Calculation in Fminer"
 description: "Fminer algorithms BBRC and LAST-PM can now be used for automatic support calculation. This post shows how to use it."
 category: algorithm
-tags: [Fminer, Feature generation, BBRC, LAST-PM, Tutorials]
+tags: [Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 
