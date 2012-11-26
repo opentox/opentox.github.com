@@ -109,12 +109,10 @@ Start the virtual machine via the proxmox webinterface.
     iface eth0 inet static
         address 10.0.0.10X
         netmask 255.255.255.0
-        network 10.0.0.0
-        broadcast 10.0.0.255
         gateway 10.0.0.XXX # your vm bridge
         # dns-* options are implemented by the resolvconf package, if installed
         dns-nameservers DNS-IP   </code></pre>
 
-
+use one or more of the Hetzner nameservers for DNS-IP (213.133.98.98, 213.133.99.99)
 
 
