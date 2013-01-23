@@ -52,6 +52,16 @@ For XP and earlier versions of Windows, use [gparted live CD](https://www.google
 
 2.  For US keyboards (recommended for programming): Run `sudo dpkg-reconfigure keyboard-configuration`, select *105 key generic / english-US layout with EUR sign on ‘5’ key*. use `AltGr` as modifier for foreign symbols (default).
 
-3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the system with your desired user applications. Read the [Ubuntu cheat sheet](http://www.cheat-sheets.org/#Ubuntu) to learn some basics about your system. Consider [tweaking Ubuntu console](/General/2012/05/18/improved-ubuntu-terminal).
+3.  Read [ubuntuguide.org](http://ubuntuguide.org) how to set up the system with your desired user applications. Read the [Ubuntu cheat sheet](http://www.cheat-sheets.org/#Ubuntu) to learn some basics about your system. 
+
+4. Consider replacing the Ubuntu unity application switcher by a version that does not group windows.
+
+    1. Run `sudo aptitude install compizconfig-settings-manager`, followed by `ccsm`
+    2. Go to Ubuntu Unity plugin and disable all Alt+Tab keybindings. Do not disable the plugin as a whole.
+    3. Enable the Application Switcher plugin. 
+    4. Consider using the Grid plugin, which cleanly aligns windows using keyboard strokes.
+
+5. If you are working on the console a lot, consider [tweaking Ubuntu console](/General/2012/05/18/improved-ubuntu-terminal).
+
 
 
