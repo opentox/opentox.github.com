@@ -2,8 +2,8 @@
 layout: post
 title: "Working on a server via SSH"
 description: "Working on a server via SSH"
-category: linux
-tags: [Linux, Ubuntu, Debian, Terminal, SSH]
+category: Development
+tags: [Linux, Ubuntu, Debian, Terminal, SSH, Linux]
 ---
 {% include JB/setup %}
 

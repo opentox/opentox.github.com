@@ -2,8 +2,8 @@
 layout: post
 title: "Opentox development in tmux"
 description: ""
-category: development
-tags: [development]
+category: Development
+tags: [Tmux]
 ---
 {% include JB/setup %}
 

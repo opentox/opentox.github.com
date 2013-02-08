@@ -2,7 +2,7 @@
 layout: post
 title: "Converting OVA images to KVM"
 description: "Converting an Open Virtual Appliance OVA-File to use in KVM"
-category: server
+category: Installation
 tags: [Linux, Ubuntu, Debian, OVA, Virtual Appliance]
 ---
 {% include JB/setup %}

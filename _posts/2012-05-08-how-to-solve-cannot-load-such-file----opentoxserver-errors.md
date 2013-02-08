@@ -2,7 +2,7 @@
 layout: post
 title: "How to solve 'cannot load such file opentox/server' errors whens starting unicorn"
 description: ""
-category: server
+category: Installation
 tags: ["Debugging"]
 ---
 {% include JB/setup %}

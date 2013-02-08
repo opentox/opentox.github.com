@@ -2,8 +2,8 @@
 layout: post
 title: "Installing Ubuntu on Thinkpads"
 description: ""
-category: linux
-tags: [Ubuntu, Debian, Thinkpad, Setup]
+category: Development
+tags: [Ubuntu, Debian, Thinkpad, Setup, Linux]
 ---
 {% include JB/setup %}
 

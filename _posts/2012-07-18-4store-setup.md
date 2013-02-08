@@ -2,7 +2,7 @@
 layout: post
 title: "4store setup"
 description: ""
-category: setup
+category: Installation
 tags: [4store]
 ---
 {% include JB/setup %}

@@ -2,7 +2,7 @@
 layout: post
 title: "Installer issues"
 description: ""
-category: setup
+category: Installation
 tags: [Ubuntu, Debian, Setup]
 ---
 {% include JB/setup %}

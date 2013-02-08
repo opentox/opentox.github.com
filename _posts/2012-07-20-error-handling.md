@@ -2,8 +2,8 @@
 layout: post
 title: "Error handling"
 description: ""
-category: development
-tags: [development]
+category: Development
+tags: [Error handling]
 ---
 {% include JB/setup %}
 For developers only.

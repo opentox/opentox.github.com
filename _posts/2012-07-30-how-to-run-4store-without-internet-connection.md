@@ -2,8 +2,8 @@
 layout: post
 title: "How to run 4store without internet connection"
 description: ""
-category: setup
-tags: [4store, installation]
+category: Installation
+tags: [4store]
 ---
 {% include JB/setup %}
 

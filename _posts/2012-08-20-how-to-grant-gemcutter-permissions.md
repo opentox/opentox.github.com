@@ -2,8 +2,8 @@
 layout: post
 title: "How to grant gemcutter permissions"
 description: ""
-category: general
-tags: [development]
+category: Development
+tags: [Gemcutter, Gem]
 ---
 {% include JB/setup %}
 

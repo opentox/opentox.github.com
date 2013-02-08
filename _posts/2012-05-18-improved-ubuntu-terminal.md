@@ -2,8 +2,8 @@
 layout: post
 title: "Improved Ubuntu Terminal"
 description: "Some techniques to improve user experience on Ubuntu terminal sessions"
-category: linux
-tags: [Ubuntu, Debian, Terminal, Thinkpad, Setup]
+category: Development
+tags: [Ubuntu, Debian, Terminal, Thinkpad, Setup, Linux]
 ---
 {% include JB/setup %}
 

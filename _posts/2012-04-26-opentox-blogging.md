@@ -2,53 +2,41 @@
 layout: post
 title: "Blogging at opentox.github.com"
 description: ""
-category: meta
-tags: []
+category: Development
+tags: [Blogging]
 ---
 {% include JB/setup %}
 
-For OpenTox GitHub organization members only
-
 Install Jekyll
 --------------
-<br />
 
     gem install jekyll
 
-<br />
 Get opentox.github.com
 ----------------------
-<br />
 
     git clone git@github.com:opentox/opentox.github.com.git
 
-<br />
 Preview
 -------
-<br />
 
     cd opentox.github.com
     jekyll --server
 
 view at `http://localhost:4000`
 
-<br />
 Blog
 ----
-<br />
 
     rake post title="foo"
 
-Edit blog at `_posts/[...]foo.md. Use a [spell-checker](/linux/2012/05/18/using-vim/).
+Edit blog at `_posts/[...]foo.md`. Use a [spell-checker](/linux/2012/05/18/using-vim/).
 
-<br />
 Categories and tags
 -------------------
-<br />
 
-Categories should match github projects (e.g. client, server, algorithm, ...) or "general" for topics that apply to more than one project. 
-For larger collections of related documents that would go to "general", invent a new category to avoid crowding the "general" category.
-Use tags to refer to concepts (e.g REST, "support vector machines", ...). Please 
+Please choose one of the terms *Usage*, *Installation* or *Development* as a category for your post. 
+Use tags to refer to related concepts (e.g *REST*, *support vector machines*, ...). Please 
 
 - re-use existing tags as much as possible. 
 - when re-using, be sure to use the verbatim expression (e.g. capitalization).
@@ -57,13 +45,11 @@ This is important for the 'Related Posts' functionality (although it does not se
 
 Publish
 -------
-<br />
 
     git add .
     git commit -m "Add new content"
     git push 
 
-<br />
 Formatting
 -------
 * [Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)

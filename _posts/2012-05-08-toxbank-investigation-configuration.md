@@ -2,7 +2,7 @@
 layout: post
 title: "OpenTox/ToxBank Webservices Configuration"
 description: "Example Configuration for OpenTox/ToxBank webservices"
-category: server
+category: Installation
 tags: [Setup]
 ---
 {% include JB/setup %}

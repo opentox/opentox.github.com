@@ -2,8 +2,8 @@
 layout: post
 title: "Clever Feature Creation Keeps Your Database Small"
 description: ""
-category: development
-tags: [development,dataset, Feature Generation, Fminer]
+category: Development
+tags: [Dataset, Feature Generation, Fminer]
 ---
 {% include JB/setup %}
 

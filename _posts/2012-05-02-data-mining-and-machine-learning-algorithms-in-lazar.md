@@ -2,8 +2,8 @@
 layout: post
 title: "Data Mining and Machine Learning Algorithms in Lazar"
 description: "Several statistical learners exist within Lazar. This page details important computational components."
-category: algorithm
-tags: [Lazar, Data Mining, Tutorials]
+category: Usage
+tags: [Algorithm, Lazar, Data Mining, Tutorials]
 ---
 {% include JB/setup %}
 

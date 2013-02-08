@@ -2,7 +2,7 @@
 layout: post
 title: "Set Up Virtual Machine in Proxmox Virtual Environment"
 description: "Short description of a scenario "
-category: server 
+category: Installation
 tags: [Setup]
 ---
 {% include JB/setup %}

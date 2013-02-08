@@ -2,7 +2,7 @@
 layout: post
 title: "Unicorn Init Script with restart and upgrade"
 description: ""
-category: server
+category: Installation
 tags: [Setup]
 ---
 {% include JB/setup %}

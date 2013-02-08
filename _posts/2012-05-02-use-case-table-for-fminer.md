@@ -2,8 +2,8 @@
 layout: post
 title: "Use Case Table for Fminer"
 description: "Important use-cases and command line arguments / web service switches are presented below. The list is not complete! See [fminer README](https://github.com/amaunz/fminer2/blob/master/fminer/README) and [web services README](http://github.com/opentox/algorithm) for a more complete overview."
-category: algorithm
-tags: [Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
+category: Usage
+tags: [Algorithm, Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 

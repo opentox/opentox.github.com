@@ -2,8 +2,8 @@
 layout: post
 title: "Lazar Models and how to trigger them"
 description: "I have implemented several underlying statistical learners within Lazar. There are kernel models for classification and regression. There are also facilities for physico-chemical descriptor calculation."
-category: algorithm
-tags: [Lazar, Algorithm Selection, Tutorials]
+category: Usage
+tags: [Lazar, Algorithm, Tutorials]
 ---
 {% include JB/setup %}
 

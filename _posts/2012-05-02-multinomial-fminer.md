@@ -2,8 +2,8 @@
 layout: post
 title: "Multinomial Fminer"
 description: "Both libraries (libbbrc and liblast) within the [Fminer2 package](http://github.com/amaunz/fminer2) are now usable in a multinomial context. The efficient pruning technique specific to libbbrc has been generalized to this setting."
-category: algorithm
-tags: [Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
+category: Usage
+tags: [Algorithm, Fminer, Feature Generation, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}
 

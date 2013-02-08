@@ -2,8 +2,8 @@
 layout: post
 title: "Install opentox development environment"
 description: ""
-category: setup
-tags: [deployment, installation, Ubuntu, Debian, Setup]
+category: Installation
+tags: [Deployment, Ubuntu, Debian, Setup]
 ---
 {% include JB/setup %}
 

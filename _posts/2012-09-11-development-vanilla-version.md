@@ -2,7 +2,7 @@
 layout: post
 title: "Development: Vanilla Version"
 description: ""
-category: development
+category: Development
 tags: [Lazar, Fminer, 4store, BBRC, LAST-PM, Tutorials]
 ---
 {% include JB/setup %}

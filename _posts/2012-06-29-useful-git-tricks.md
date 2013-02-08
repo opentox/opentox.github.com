@@ -2,8 +2,8 @@
 layout: post
 title: "Useful git tricks"
 description: "A collection of helpful commands for the SCM system git"
-category: development
-tags: [Linux, Ubuntu, Debian, Terminal, GIT]
+category: Development
+tags: [Linux, Ubuntu, Debian, Terminal, Git]
 ---
 {% include JB/setup %}
 

@@ -2,8 +2,8 @@
 layout: post
 title: "OpenTox object internals"
 description: ""
-category: client
-tags: [development]
+category: Usage
+tags: [OpenTox objects, Metadata]
 ---
 {% include JB/setup %}
 Default OpenTox objects are defined in `opentox-client/lib/opentox.rb`. They contain metadata as `RDF::Graph` in the `@rdf` variable.

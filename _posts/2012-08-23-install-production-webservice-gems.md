@@ -2,8 +2,8 @@
 layout: post
 title: "Install production webservice gems"
 description: ""
-category: general
-tags: [installation, gem]
+category: Installation
+tags: [Gem]
 ---
 {% include JB/setup %}
 The installation of opentox-webservices is straightforward with the `gem` command, e.g.

@@ -1,12 +1,9 @@
 ---
 layout: page
-title: Articles
+title: OpenTox webservices 
 tagline: 
 ---
 {% include JB/setup %}
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+These pages contain random notes about the development, installation and usage of [OpenTox](http://opentox.org) and [ToxBank](http://toxbank.net) webservices. The primary documentation is embedded in code at our [github repositories](http://github.com/opentox) which can be browsed at [RubyDoc.info](http://rubydoc.info/).
+

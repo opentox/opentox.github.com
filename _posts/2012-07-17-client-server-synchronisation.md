@@ -2,7 +2,7 @@
 layout: post
 title: "Client - server synchronisation"
 description: ""
-category: client
+category: Usage
 tags: []
 ---
 {% include JB/setup %}

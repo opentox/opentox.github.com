@@ -2,8 +2,8 @@
 layout: post
 title: "Lazar Feature Generation, Feature Selection, Validation"
 description: "This article illustrates feature generation, feature selection, and validation using opentox-ruby and the REST paradigm. As such, it may be useful as a high-level documentation."
-category: algorithm
-tags: [Feature Generation, Feature Selection, Validation, Tutorials]
+category: Usage
+tags: [Algorithm, Feature Generation, Feature Selection, Validation, Tutorials]
 ---
 {% include JB/setup %}
 
