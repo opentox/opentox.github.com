@@ -3,7 +3,7 @@ layout: post
 title: "Authorization &#38; Authentication Flow and Configuration"
 description: "Authorization & Authentication flow for webservices using the opentox-ruby gem"
 category: Installation
-tags: [Setup, Webservices]
+tags: [Configuration, Setup, Webservices]
 ---
 {% include JB/setup %}
 
