@@ -9,6 +9,7 @@ tags: []
 
 - Read and understand the [Architecture overview](/Development/2013/02/07/architecture-overview)
 - Follow the guidelines for [Error handling](/Development/2012/07/20/error-handling)
+- Use OpenTox methods `get, post, put, delete` instead of RestClientWrapper or RestClient
 - Define gem dependencies (and versions if necessary) in the \*.gemspec file (*not*  in the Gemfile, otherwise gems won\'t install properly without bundler)
 - Add tests to [opentox-test](http://github.com/opentox/opentox-test) for your new features
 - Make sure that *all* tests in [opentox-test](http://github.com/opentox/opentox-test) pass before committing to an official branch (development, master)
