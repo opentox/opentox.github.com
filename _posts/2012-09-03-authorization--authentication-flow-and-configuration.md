@@ -9,7 +9,7 @@ tags: [Configuration, Setup, Webservices]
 
 
 A&A How it works
-=========
+-------
 A&A is located in a before filter method of the ruby framework sinatra, which means every request (REST) to the sinatra application is controlled by the code inside this filter befor anything else happens.
 
 If A&A is activated: 
@@ -22,7 +22,7 @@ If A&A is activated:
 
 
 A&A Flow opentox-ruby gem
-=========
+-------
 
 Graphical Flow of Authorization & Authentication for webservices using the opentox-ruby gem. Webservice configuration is located in **/home/USERNAME/.opentox/config/ENVIRONMENT.yaml**  
  
@@ -30,7 +30,7 @@ Graphical Flow of Authorization & Authentication for webservices using the opent
 
 
 Configuration options
-=========
+-------
 inside the authorization block (see also configuration example)
 * `server`- openSSO server URI. If this line is set to `:server: ` A&A is disabled.
 * `free_request` - requests without any Authorization and Authentication **GET, POST, PUT, DELETE** (maybe also HEAD in newer Versions)
@@ -42,7 +42,7 @@ inside the authorization block (see also configuration example)
 
 <br />
 String or regex URIs
-=========
+-------
 URIs in `free_uris` and `authorize_exceptions` are possible as string or regex
 e.G.: 
 
@@ -55,7 +55,7 @@ defines free access to GET request for "http://SEVER/model" exact URI, not to "h
 the regex `!ruby/regexp /http:\/\/SERVER\/algorithm/` gives free GET request to "http://SERVER/agorithm/" and all addresses below like "http://SERVER/algorithm/bbrc/".
 
 Configuration-file example
-=========
+-------
 
     # OpenSSO Authorization
     # set ":server: " to disable A&A
