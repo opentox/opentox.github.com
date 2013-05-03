@@ -7,6 +7,7 @@ tags: [Configuration, Setup, Webservices]
 ---
 {% include JB/setup %}
 
+see also [webservice configuration example](/Installation/2013/05/03/authorization--authentication-configuration-opentox-serverclient--300/) for opentox-(client/server) version >= 3.0.0.
 
 A&A How it works
 -------

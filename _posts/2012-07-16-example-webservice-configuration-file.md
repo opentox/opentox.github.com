@@ -44,3 +44,6 @@ Example content of a webservice configuration file. The webservices config file 
   * authorize_exceptions: URIs with authorization exceptions
     
 * __$WEBSERVICE_NAME__ Hash: standard configuration of a the webservice. URI and anything else what is needed.
+
+
+see also [webservice configuration example](/Installation/2013/05/03/authorization--authentication-configuration-opentox-serverclient--300/) for opentox-(client/server) version >= 3.0.0.  
