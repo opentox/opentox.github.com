@@ -14,7 +14,7 @@ Simplify the RDF::Writer method if you have already an rdf graph like:
       reader.each_statement{ |statement| @rdf << statement }
     end
 
-To parse it to another format simpy use:
+To parse it to another format simply use:
 
     RDF::Writer.for(format).buffer(:encoding => Encoding::ASCII) do |writer|
       writer << @rdf
@@ -25,6 +25,3 @@ instead of:
     RDF::Writer.for(format).buffer(:encoding => Encoding::ASCII) do |writer|
       @rdf.each{|statement| writer << statement}
     end
-
-and use the base class RDF::Writer instead of subclasses like RDF::Turtle::Writer.
-It is much more time-efficient !
