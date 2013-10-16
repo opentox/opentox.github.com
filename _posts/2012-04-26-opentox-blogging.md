@@ -10,7 +10,7 @@ tags: [Blogging]
 Install Jekyll
 --------------
 
-    gem install jekyll
+    gem install jekyll -v 0.12.0
 
 Get opentox.github.com
 ----------------------
