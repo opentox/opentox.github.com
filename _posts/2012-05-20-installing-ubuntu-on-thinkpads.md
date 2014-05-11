@@ -49,6 +49,7 @@ For XP and earlier versions of Windows, use [gparted live CD](https://www.google
 
     2.  [Install **TLP** (german)](http://thinkpad-wiki.org/TLP_-_Stromspareinstellungen_fuer_Ubuntu).
     3. With **TLP** installed, run **Powertop** again and compare. Google for any remaining recommendations under *Tunables*.
+    4. Install Thinkfan as (described on the wiki)[http://thinkwiki.de/thinkfan].
 
 2.  For US keyboards (recommended for programming): Run `sudo dpkg-reconfigure keyboard-configuration`, select *105 key generic / english-US layout with EUR sign on ‘5’ key*. use `AltGr` as modifier for foreign symbols (default).
 
