@@ -81,7 +81,7 @@ Download and install opentox-client and opentox-server:
 
 Download and install services and tests:
 
-    for f in algorithm compound dataset feature model task opentox-test; do
+    for f in algorithm compound dataset feature model validation task opentox-test; do
       git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
