@@ -38,16 +38,16 @@ Conceptual approach:
 
 # Installation
 
-Installation (`development` at the point of writing this = 08/2012) tested with Debian 6.0.5 and Ubuntu 11.04. Installer available at [github](https://github.com/opentox/install).
+Installation (`development` at the point of writing this = 08/2014) tested with Debian 7.6 (wheezy), kernel 3.2.0-4-amd64. Installer available at [github](https://github.com/opentox/install).
 
 Check you can run "sudo" commands (e.g. `sudo ls`), which is required for base packages. Install git:
 
     # Install git
     sudo apt-get install git 
 
-Add your public key at `https://github.com`. Download, configure and execute the installer:
+Download, configure and execute the installer (You might add your public key at `https://github.com`):
 
-    git clone git@github.com:opentox/install.git $HOME/install
+    git clone "https://github.com/opentox/install.git" $HOME/install
     cd $HOME/install
     git checkout development
     # First check config.sh with your favorite editor
@@ -56,6 +56,10 @@ Add your public key at `https://github.com`. Download, configure and execute the
 This will prepare the system for opentox web services, including dependencies. 
 
 # Install OpenTox services
+
+You can run the following steps with a script:
+
+    bash $HOME/install/service_install.sh
 
 Load environment (general):
 
@@ -70,7 +74,7 @@ Load environment (with BASH):
 Download and install opentox-client and opentox-server:
     
     for f in opentox-client opentox-server; do 
-      git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
+      git clone "https://github.com/opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
     done 
@@ -82,7 +86,7 @@ Download and install opentox-client and opentox-server:
 Download and install services and tests:
 
     for f in algorithm compound dataset feature model validation task opentox-test; do
-      git clone "git@github.com:opentox/$f.git" $OT_PREFIX/$f
+      git clone "https://github.com/opentox/$f.git" $OT_PREFIX/$f
       cd $OT_PREFIX/$f
       git checkout development 2>/dev/null
       if [ -f $OT_PREFIX/$f/bin/$f-install ]; then
@@ -104,9 +108,9 @@ Add ot-tools to your `.bashrc`:
     echo '. $HOME/.opentox/ot-tools.sh' >> ~/.bashrc
     # source .bashrc or restart shell
 
-All ot-tools (`otconfig`, `otstart`, `otcheck`, `otreload`, `otkill`) are available in your shell. General usage: 
+All ot-tools (`otconfig`, `ottail`, `otless`, `otstart`, `otkill`, `otupdate_repo`) are available in your shell. General usage: 
 
-    [otstart|otcheck|otreload|otkill] [all|algorithm|compound|dataset|feature|
+    [otstart|otkill|otupdate_repo] [all|algorithm|compound|dataset|feature|
     model|task|validation|4store]
 
 `otconfig` is the only command not taking an argument. It sets the environment variables for all services. 
@@ -143,13 +147,14 @@ NOTE: Only installed service URIs are set in the config files. Model and validat
 
     cd $OT_PREFIX/opentox-test
     otconfig
-    ruby opentox-client.rb
-    ruby test/dataset-large.rb
+    ruby opentox-client-short.rb
+    # Or a longer test script
+    ruby opentox-client-all.rb
 
 
 The tests take some time and finish with a short report:
 
-    Finished tests in 44.690815s, 0.9622 tests/s, 4.4528 assertions/s.
-    43 tests, 199 assertions, 1 failures, 0 errors, 0 skips
+    Finished tests in 375.726618s, 0.2741 runs/s, 14.1193 assertions/s.
+    103 tests, 5305 assertions, 0 failures, 1 errors, 0 skips
 
 To test one specific service, run its script (`ruby [service_name].rb`) in `$OT_PREFIX/opentox-test/test`.
