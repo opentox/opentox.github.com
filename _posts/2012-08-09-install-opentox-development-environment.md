@@ -38,7 +38,7 @@ Conceptual approach:
 
 # Installation
 
-Installation (`development` at the point of writing this = 08/2014) tested with Debian 7.6 (wheezy), kernel 3.2.0-4-amd64. Installer available at [github](https://github.com/opentox/install).
+Installation (`development` at the point of writing this = 08/2014) tested with Debian 7.6 (wheezy), kernel 3.2.0-4-amd64, GNOME 3.4.2. Installer available at [github](https://github.com/opentox/install).
 
 Check you can run "sudo" commands (e.g. `sudo ls`), which is required for base packages. Install git:
 
