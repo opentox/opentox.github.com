@@ -14,7 +14,7 @@ A&A How it works
 [Description](/Installation/2012/09/03/authorization--authentication-flow-and-configuration/) see paragraphs **A&A How it works** and **A&A Flow opentox-ruby gem** for Versions below 3.0.0 .
 
 
-Configuration-file example
+Configuration Example
 ----
 Example A&A configuration for the dataset service. Configuration-file is **/home/USERNAME/.opentox/config/dataset.rb**  
 
@@ -27,7 +27,7 @@ Example A&A configuration for the dataset service. Configuration-file is **/home
       :authorize_exceptions => { [:GET,:POST] => [$dataset[:uri], "#{$dataset[:uri]}/test/task_error", "#{$dataset[:uri]}/test/error_in_task"] }
     }
 
-Configuration options
+Configuration Options
 ----
 * `$dataset = { :uri => "https://myserver.org/dataset" }` sets the URI to the dataset service itself.
 * `$aa = { :uri => nil }` turns A&A off.
@@ -39,7 +39,7 @@ Configuration options
   `"#{$dataset[:uri]}/test/error_in_task"` defines a URI used in a test call.
 
 
-Configuration-file example for Validation service
+Configuration for Validation Service
 ----
 Example A&A configuration for the validation service. Configuration-file is **/home/USERNAME/.opentox/config/validation.rb**
 
