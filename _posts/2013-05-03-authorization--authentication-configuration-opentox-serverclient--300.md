@@ -14,7 +14,7 @@ A&A How it works
 [Description](/Installation/2012/09/03/authorization--authentication-flow-and-configuration/) see paragraphs **A&A How it works** and **A&A Flow opentox-ruby gem** for Versions below 3.0.0 .
 
 
-Configuration-file example
+Configuration Example
 ----
 Example A&A configuration for the dataset service. Configuration-file is **/home/USERNAME/.opentox/config/dataset.rb**  
 
@@ -27,7 +27,7 @@ Example A&A configuration for the dataset service. Configuration-file is **/home
       :authorize_exceptions => { [:GET,:POST] => [$dataset[:uri], "#{$dataset[:uri]}/test/task_error", "#{$dataset[:uri]}/test/error_in_task"] }
     }
 
-Configuration options
+Configuration Options
 ----
 * `$dataset = { :uri => "https://myserver.org/dataset" }` sets the URI to the dataset service itself.
 * `$aa = { :uri => nil }` turns A&A off.
@@ -36,4 +36,20 @@ Configuration options
 * `:authenticate_request => []` request methods that needs only Authentification. Request must have a valid subjectid, but no policy.
 * `:authorize_request => [:GET, :POST, :DELETE, :PUT]` request methods with authorization controll
 * `:authorize_exceptions => { [:GET,:POST] => [$dataset[:uri], "#{$dataset[:uri]}/test/task_error", "#{$dataset[:uri]}/test/error_in_task"] }` authorization exceptions defined as a Hash of request-methods-array keys mapped to URI-array values. In this case you are allowed to GET and POST to the base service URI to get a list of datasets or to POST a new dataset.
-  `"#{$dataset[:uri]}/test/error_in_task"` defines a URI used in a test call. 
+  `"#{$dataset[:uri]}/test/error_in_task"` defines a URI used in a test call.
+
+
+Configuration for Validation Service
+----
+Example A&A configuration for the validation service. Configuration-file is **/home/USERNAME/.opentox/config/validation.rb**
+
+Mind the `/#{Regexp.quote($validation[:uri])}\/[a-z,A-Z,\/,_\-]*$/`  entry in authorize exceptions to let authenticated users the possibility to create crossvalidations, reports and other objects under `/validation/` directory.
+
+    $validation = { :uri => "https://myserver.org/validation" }
+    $aa = {
+      :uri => 'https://opensso.in-silico.ch',
+      :free_request => [:HEAD],
+      :authenticate_request => [],
+      :authorize_request => [:GET, :POST, :DELETE, :PUT],
+      :authorize_exceptions => {[:GET,:POST] => [$validation[:uri], /#{Regexp.quote($validation[:uri])}\/[a-z,A-Z,\/,_\-]*$/, $task[:uri]]}
+    }
