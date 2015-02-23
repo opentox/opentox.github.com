@@ -302,3 +302,49 @@ This copies
 - **irb** (ruby interactive) configuration file: Command completion, history.
 
 to your home directory (backups of existing files are created). Just log out and log in again to let the changes take effect.
+
+
+<p></p>
+---
+<p></p>
+
+
+# Cygwin support
+
+You have to use the [cygwinports repository](https://sourceware.org/cygwinports).
+Terminator is only included there.
+
+I also installed [Ubuntu fonts](http://font.ubuntu.com) to get a decent console (see config below).
+
+To get it to work on Windows, you need
+
+  1. cygwin
+  2. an X server
+
+Then try `DISPLAY=:0 dbus-launch terminator` in a cygwin shell.
+
+Here is a corresponding config:
+
+
+    [global_config]
+      dbus = True
+      window_state = maximized
+      handle_size = 1
+    [keybindings]
+    [profiles]
+      [[default]]
+        use_system_font = False
+        font = Ubuntu Mono 10
+        background_color = "#300a24"
+        scrollbar_position = hidden
+        antialias = False
+    [layouts]
+      [[default]]
+        [[[child1]]]
+          type = Terminal
+          parent = window0
+        [[[window0]]]
+          type = Window
+          parent = ""
+    [plugins]
+
