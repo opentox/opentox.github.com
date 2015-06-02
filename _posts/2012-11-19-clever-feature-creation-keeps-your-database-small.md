@@ -15,28 +15,36 @@ Consider an `OpenTox::Dataset` object in its fully loaded (populated) state, con
 
 However, even SPARQL queries take more time when data is stored in a redundant fashion at the 4Store service. This may not be necessary, since most of the data is usually already stored. For example, datasets, or parts of datasets, are often uploaded many times to the same service. Therefore, creating features by
 
+```ruby
     f=OpenTox::Feature.new
     ... do something with f ... 
     f.put
+```
 
 programmatically creates a new feature every time. The 4Store service knows nothing about the semantics and the programmer is in charge to tell the service that
 
+```ruby
     f1=OpenTox::Feature.new
     f1.title="Hamster Carcinogenicity"
     f1.put
+```
 
 and 
 
+```ruby
     f2=OpenTox::Feature.new
     f2.title="Hamster Carcinogenicity"
     f2.put
+```
 
 are actually the same feature. He should *do this* instead:
 
+```ruby
     f1=OpenTox::Feature.new
     f1.title="Hamster Carcinogenicity"
     f2=f1 # f2 is a pointer to f1
     f1.put
+```
 
 This results in a completely non-redundant setting, because compounds describing the same structure were already non-redundantly store. Therefore, two `OpenTox::Dataset`s describing the same data are now merely pointers to the same data. The features are also only present a single time at the 4Store backend.
 
@@ -47,6 +55,7 @@ The `opentox-client` library contains a method `OpenTox::Feature#find_by_title` 
 
 The method is used like this:
 
+```ruby
     # Search feature by title
     title = "Foo"
     metadata = {
@@ -54,5 +63,6 @@ The method is used like this:
         RDF::DC.description => description
       }
     feature = OpenTox::Feature.find_by_title(title, metadata)
+```
 
 In practice, not many features are created per dataset, and the method works quite efficiently. It has very nice effects, for example, when uploading to datasets one after the other, both have identical features. The 4Store backend now knows that they are equal and potentially eliminates duplicate data.

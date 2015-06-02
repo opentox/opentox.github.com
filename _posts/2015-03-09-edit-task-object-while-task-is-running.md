@@ -9,7 +9,8 @@ tags: [Metadata, Object, RDF, Tutorials]
 **This post explains how to edit a Task object with percentageCompleted value.**
 
 _Example:_
-    
+
+```ruby    
     # generate a Task uri
     task_uri = OpenTox::Task.task_uri
     
@@ -37,6 +38,7 @@ _Example:_
     end
     # wait to complete
     task.wait
+```
 
 **If task status is completed task.percentageCompleted == 100%**
 
