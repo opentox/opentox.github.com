@@ -60,3 +60,7 @@ Now, origin should also be downgraded on branch `<branch>`. Here is how to remov
 
     git push origin :<branch>
 
+## Merge specific files from branch to branch
+
+Suppose you want merge a specific `FILE` or commit from branch `feature/foo` to any other branch eg. branch `master` you can use `--patch`.
+First checkout to your destination branch `git checkout master`. Then `git checkout --patch feature/foo FILE`. It gives you additional prompt to control merge options where you can agree or deny single diffs within the file you want to merge. Same procedure with single commits.
