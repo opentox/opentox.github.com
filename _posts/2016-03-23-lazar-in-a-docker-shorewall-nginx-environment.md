@@ -3,7 +3,7 @@ layout: post
 title: "Lazar in a Docker Shorewall Nginx Environment"
 description: ""
 category: Installation
-tags: [Setup, Nginx, Docker, Shorewall, lazar]
+tags: [Setup, Nginx, Docker, Shorewall, Lazar]
 ---
 {% include JB/setup %}
 **This post explains how to setup Lazar Docker image in a  Shorewall Nginx Environment with a static IP**
