@@ -43,9 +43,9 @@ check with:
 
 download the docker lazar image 
 
-    docker pull insilicotox/lazar-public-data
+    docker pull insilicotox/lazar-public-data:LATEST_TAG
 
-run docker image with a static IP
+run docker image with a static IP (use v3 or favoured tag)
 
     docker run -p 8088:8088 --net br0 --ip 10.0.1.101 -itd insilicotox/lazar-public-data:v3
 
