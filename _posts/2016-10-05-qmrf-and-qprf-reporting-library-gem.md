@@ -17,7 +17,7 @@ The  open source code is freely available and versioned at the Github code hosti
 The library has two main classes for the report types **OpenTox::QMRFReport** and **OpenTox::QPRFReport**. Instances of these classes can be easily filled with contents.
 There is a full documentation of the library with examples at [RubyDoc.info Code documentation](http://www.rubydoc.info/gems/qsar-report) .
 
-### Classes for QMRF and QPRF reporting.  
+### Classes for QMRF and QPRF reporting.
 
 * **OpenTox::QMRFReport**:
   Provides a ruby OpenTox class to prepare an initial version of a QMRF report.
@@ -99,8 +99,7 @@ create a new QPRF report, add some content and show output:
 
 ### Installation
 
-
-  gem install qsar-report
+    gem install qsar-report
 
 ### More Documentation
 
