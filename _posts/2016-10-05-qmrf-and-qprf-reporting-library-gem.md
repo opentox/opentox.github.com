@@ -54,32 +54,6 @@ create a new QMRF report, add some content and show output:
     
     # validate a report (as created above) against qmrf.xsd
     report.validate
-    ```
-    ### QPRF
-    create a new QPRF report, add some content and show output:
-    ```ruby
-    require "qsar-report"
-    
-    # create a new QPRF report instance
-    report = OpenTox::QPRFReport.new
-    
-    # Set Title of the report
-    report.Title = "My QPRF Report"
-    
-    # Set Version
-    report.Version = "1"
-    
-    # Set Date
-    report.Date = Time.now.strftime("%Y/%m/%d")
-    
-    # Set the CAS number in chapter 1.1
-    report.value "1.1", "7732-18-5" # set CAS number for H²O
-    
-    # print HTML version
-    puts report.to_html
-    
-    # print formated JSON version
-    puts report.pretty_json
 
 ```
 
