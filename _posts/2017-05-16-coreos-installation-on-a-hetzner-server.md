@@ -9,7 +9,7 @@ tags: []
 
 - log into the rescue system
 
-    ssh root@{sever-ip}
+    `ssh root@{sever-ip}`
 
 - run `installimage`
 
@@ -19,36 +19,30 @@ tags: []
 
 * reboot into CoreOS
 
-    reboot
+    `reboot`
 
 - log into CoreOS (using the same password as for the rescue system)
 
-    ssh root@{sever-ip}
+    `ssh root@{sever-ip}`
 
-- set the hostname (if you have omitted it in install.conf)
+CoreOS overwrites user data in /etc during booting (e.g. after a automatic system update). In order to make persistent changes, we have to edit
+`/var/lib/coreos-install/user_data`:
 
-    hostname {hostname}
+    - set the hostname
+    - add your public SSH key for the core user
+    - disable sftp `#Subsystem sftp internal-sftp`
+    - disable root login `PermitRootLogin no`
+    - disable password authentication `PasswordAuthentication no`
 
-- change root password
+The docker systemd service is not enabled by default, but we need it to restart docker services after a reboot:
 
-    passwd
+    `systemctl enable docker.service`
 
-- create a password for the `core` user
+Reboot to test changes:
 
-    passwd core
+    `reboot`
 
-- login as core user from another console to make sure everything works as expected (and to avoid lockouts)
+Make sure you can login as core user:
 
-- disable root login
-
-    - edit /etc/ssh/sshd_config 
-    - set PermitRootLogin no
-    - restart sshd
-
-        sudo systemctl daemon-reload
-
-- exit root
-
-    exit
-
+    `ssh core@{sever-ip}`
 
